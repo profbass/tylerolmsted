@@ -4,9 +4,10 @@ import Navigation from './Navigation';
 test('renders navigation menu items', () => {
   // Mock menu items
   const menuItems = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'Home', href: '#home' },
+    { name: 'About', href: '#about' },
+    { name: 'Services', href: '#services' },
+    { name: 'Contact', href: '#contact' },
   ];
 
   // Render the Navigation component with mock menu items
