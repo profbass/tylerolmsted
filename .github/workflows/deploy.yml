@@ -28,4 +28,4 @@ jobs:
 
     - name: Deploy to Dreamhost
       run: |
-        rsync -avz --delete -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" ./ dh_etmf7k@iad1-shared-e1-17.dreamhost.com:/tylerolmsted.co
+        rsync -avz --delete -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" ./ dh_etmf7k@iad1-shared-e1-17.dreamhost.com:~/tylerolmsted.co
