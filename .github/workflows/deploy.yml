@@ -9,10 +9,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    # Checkout your repository
     - uses: actions/checkout@v2
 
-    # Setup SSH Environment
     - name: Setup SSH Environment
       run: |
         mkdir -p ~/.ssh
@@ -22,14 +20,13 @@ jobs:
       env:
         NEW_DEPLOY_KEY: ${{ secrets.NEW_DEPLOY_KEY }}
 
-    # Optional: Verify Private Key Setup (Consider removing for security)
-    # - name: Verify Private Key Setup
-    #   run: |
-    #     ls -lah ~/.ssh/
-    #     # Warning: The following line is for debugging only. Do not expose private keys.
-    #     # cat ~/.ssh/id_ed25519
+    # Debug SSH Connection Directly
+    - name: SSH Debug Connection
+      run: |
+        ssh -v -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no dh_etmf7k@iad1-shared-e1-17.dreamhost.com "echo SSH connection successful"
+      env:
+        NEW_DEPLOY_KEY: ${{ secrets.NEW_DEPLOY_KEY }}
 
-    # Deploy to Dreamhost using rsync
     - name: Deploy to Dreamhost
       run: |
         rsync -avz --delete -e "ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no" ./ dh_etmf7k@iad1-shared-e1-17.dreamhost.com:/tylerolmsted.co
