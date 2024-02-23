@@ -11,11 +11,15 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Set up SSH
-      uses: webfactory/ssh-agent@v0.5.3
-      with:
-        ssh-private-key: ${{ secrets.NEW_DEPLOY_KEY }}
+    - name: Set up SSH manually
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.NEW_DEPLOY_KEY }}" > ~/.ssh/id_ed25519
+        chmod 600 ~/.ssh/id_ed25519
+        ssh-keyscan -H iad1-shared-e1-17.dreamhost.com >> ~/.ssh/known_hosts
+      env:
+        NEW_DEPLOY_KEY: ${{ secrets.NEW_DEPLOY_KEY }}
 
     - name: Deploy to Dreamhost
       run: |
-        rsync -avz --delete ./ dh_etmf7k@iad1-shared-e1-17.dreamhost.com:/tylerolmsted.co
+        rsync -avz --delete -e "ssh -i ~/.ssh/id_ed25519" ./ dh_etmf7k@iad1-shared-e1-17.dreamhost.com:/tylerolmsted.co
