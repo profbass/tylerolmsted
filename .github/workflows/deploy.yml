@@ -8,33 +8,28 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      id-token: write
-      issues: write
     steps:
+    # Checkout your repository
     - uses: actions/checkout@v2
 
-    - name: Verify Private Key Setup
-      run: |
-        ls -lah ~/.ssh/
-        cat ~/.ssh/id_ed25519
-
-    - name: SSH Debug Connection
-      run: |
-        ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no dh_etmf7k@iad1-shared-e1-17.dreamhost.com "echo SSH connection successful"
-      env:
-        NEW_DEPLOY_KEY: ${{ secrets.NEW_DEPLOY_KEY }}
-    
-    - name: Set up SSH manually
+    # Setup SSH Environment
+    - name: Setup SSH Environment
       run: |
         mkdir -p ~/.ssh
-        echo "${{ secrets.NEW_DEPLOY_KEY }}" > ~/.ssh/id_ed25519
+        echo "${{ secrets.NEW_DEPLOY_KEY }}" | tr -d '\r' > ~/.ssh/id_ed25519
         chmod 600 ~/.ssh/id_ed25519
         ssh-keyscan -H iad1-shared-e1-17.dreamhost.com >> ~/.ssh/known_hosts
       env:
         NEW_DEPLOY_KEY: ${{ secrets.NEW_DEPLOY_KEY }}
 
+    # Optional: Verify Private Key Setup (Consider removing for security)
+    # - name: Verify Private Key Setup
+    #   run: |
+    #     ls -lah ~/.ssh/
+    #     # Warning: The following line is for debugging only. Do not expose private keys.
+    #     # cat ~/.ssh/id_ed25519
+
+    # Deploy to Dreamhost using rsync
     - name: Deploy to Dreamhost
       run: |
-        rsync -avz --delete -e "ssh -i ~/.ssh/id_ed25519" ./ dh_etmf7k@iad1-shared-e1-17.dreamhost.com:/tylerolmsted.co
+        rsync -avz --delete -e "ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no" ./ dh_etmf7k@iad1-shared-e1-17.dreamhost.com:/tylerolmsted.co
