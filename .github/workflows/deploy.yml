@@ -14,18 +14,18 @@ jobs:
     - name: Setup SSH Environment
       run: |
         mkdir -p ~/.ssh
-        echo "${{ secrets.NEW_DEPLOY_KEY }}" | tr -d '\r' > ~/.ssh/id_ed25519
+        echo "${{ secrets.DEPLOY_KEY }}" | tr -d '\r' > ~/.ssh/id_ed25519
         chmod 600 ~/.ssh/id_ed25519
         ssh-keyscan -H iad1-shared-e1-17.dreamhost.com >> ~/.ssh/known_hosts
       env:
-        NEW_DEPLOY_KEY: ${{ secrets.NEW_DEPLOY_KEY }}
+        NEW_DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
 
     # Debug SSH Connection Directly
     - name: SSH Debug Connection
       run: |
         ssh -v -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no dh_etmf7k@iad1-shared-e1-17.dreamhost.com "echo SSH connection successful"
       env:
-        NEW_DEPLOY_KEY: ${{ secrets.NEW_DEPLOY_KEY }}
+        NEW_DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
 
     - name: Deploy to Dreamhost
       run: |
