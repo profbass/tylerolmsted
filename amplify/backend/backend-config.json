@@ -1,0 +1,43 @@
+{
+  "api": {
+    "tapi": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "tylerolmstedco80e501e3"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "function": {
+    "tylerolmstedco80e501e3": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_tylerolmstedco80e501e3_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "tylerolmstedco80e501e3"
+        }
+      ]
+    },
+    "AMPLIFY_function_tylerolmstedco80e501e3_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "tylerolmstedco80e501e3"
+        }
+      ]
+    }
+  }
+}

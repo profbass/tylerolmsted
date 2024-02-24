@@ -1,0 +1,26 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-tylerolmstedco-dev-201315-authRole",
+      "UnauthRoleArn": "arn:aws:iam::381491838784:role/amplify-tylerolmstedco-dev-201315-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::381491838784:role/amplify-tylerolmstedco-dev-201315-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-tylerolmstedco-dev-201315-deployment",
+      "UnauthRoleName": "amplify-tylerolmstedco-dev-201315-unauthRole",
+      "StackName": "amplify-tylerolmstedco-dev-201315",
+      "StackId": "arn:aws:cloudformation:us-east-2:381491838784:stack/amplify-tylerolmstedco-dev-201315/a78650b0-d2c2-11ee-a6d8-0a3fe6aebd4d",
+      "AmplifyAppId": "d2qu6istf4bypc"
+    },
+    "categories": {
+      "function": {
+        "tylerolmstedco80e501e3": {
+          "deploymentBucketName": "amplify-tylerolmstedco-dev-201315-deployment",
+          "s3Key": "amplify-builds/tylerolmstedco80e501e3-2b55622b6b676b365771-build.zip"
+        }
+      },
+      "api": {
+        "tapi": {}
+      }
+    }
+  }
+}
