@@ -1,4 +1,4 @@
-name: Deploy to Dreamhost
+name: Deploy to AWS Amplify
 
 on:
   push:
@@ -6,26 +6,24 @@ on:
       - main
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Set up SSH key
-      uses: webfactory/ssh-agent@v0.5.3
-      with:
-        ssh-private-key: ${{ secrets.DEPLOY_KEY }}
+      - name: Install dependencies
+        run: npm install
 
-    - name: Verify SSH key permissions
-      run: |
-        ls -lah ~/.ssh/
+      - name: Build
+        run: npm run build
 
-    - name: SSH Debug Connection
-      run: |
-        ssh -v -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no dh_etmf7k@iad1-shared-e1-17.dreamhost.com "echo SSH connection successful"
-
-    - name: Deploy to Dreamhost
-      run: |
-        rsync -avz --delete -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" ./ dh_etmf7k@iad1-shared-e1-17.dreamhost.com:~/tylerolmsted.co
+      - name: Deploy to AWS Amplify
+        run: |
+          npm install -g @aws-amplify/cli
+          amplify configure --accessKeyId ${{ secrets.AWS_ACCESS_KEY_ID }} --secretAccessKey ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          amplify publish
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
