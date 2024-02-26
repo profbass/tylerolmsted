@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+
+
 const Contact = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -8,9 +10,11 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your form submission logic here
-    // You can use the values of name, email, and message state variables
-    // to send the form data to the server
+    // const data = {
+    //   name,
+    //   email,
+    //   message,
+    // };
     setSuccess(true);
   };
 
