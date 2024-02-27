@@ -6,21 +6,25 @@ const Experience = () => {
       logo: '/img/logo-booj.svg',
       years: '2007 - 2017',
       position: 'Director of Production',
-      description: `Joining the company as the second employee, I played a pivotal role in building and leading the engineering teams for over a decade at booj. My contribution was instrumental in the development of booj’s award-winning real estate platform, which culminated in its acquisition by RE/MAX in 2017. I oversaw the teams responsible for creating core products, including the home search mobile apps, Agent web/mobile CRM, CMS website builder, lead management engine, marketing campaign tools, and a real estate reporting suite.`
+      description: `Joining the company as employee #2, I was instrumental in founding and scaling the engineering teams at booj, driving growth from 0 to 70 team members over the span of a decade. My leadership was integral to the development of booj’s award winning real estate platform, ultimately leading to its acquisition by RE/MAX in 2017. I was responsible for supervising the teams tasked with crafting core products, such as the home search mobile apps, Agent web/mobile CRM, CMS website builder, lead management engine, marketing campaign tools, and a real estate reporting suite.`
     },
     {
       company: 'RE/MAX',
       logo: '/img/logo-remax.svg',
       years: '2017 - 2022',
       position: 'Executive Director of Engineering',
-      description: `In my role as Executive Director of Engineering, my responsibilities included overseeing the roadmaps, processes, personnel, resourcing, and budgets for RE/MAX's product engineering teams following the booj acquisition. Collaborating closely with the product, support, and training teams, Tyler played a key role in developing and maintaining RE/MAX's top-tier technology platform.`
+      description: `In his role as Executive Director of Engineering, Tyler's responsibilities included
+      overseeing the roadmaps, processes, personnel, resourcing, and budgets for RE/
+      MAX's product engineering teams following the booj acquisition. Collaborating closely
+      with the product, support, and training teams, Tyler played a key role in developing and
+      maintaining RE/MAX's top-tier technology platform`
     },
     {
       company: 'Backflip',
       logo: '/img/logo-backflip.svg',
       years: '2022 - 2024',
       position: 'Vice President of Engineering',
-      description: `Joining Backflip in early 2022, I established the engineering teams and led the launch of the flagship iOS and Android apps. Throughout my tenure, I guided the team through a successful Series A funding round and was responsible for developing the company's engineering and IT infrastructure.`
+      description: `Joining Backflip in early 2022, Tyler established the engineering teams and led the launch of the flagship iOS and Android apps. Throughout his tenure, Tyler guided the team through a successful Series A funding round. Tyler played a pivotal role in architecting and building the company's engineering and IT infrastructure, ensuring scalability and resilience to support rapid expansion and innovation.`
     }
   ];
 
