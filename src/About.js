@@ -11,8 +11,9 @@ const About = () => {
             I'm Tyler Olmsted, and I love building great products!
           </h4>
           <p className="pt-6 font-body leading-relaxed text-grey-20">
-            I've been working in technology for more than a fifteen years - which means I have an AOL and MySpace account. In that time, I've led software development teams in building world-class SaaS and mobile applications, overseeing their journey from concept to launch. I am passionate about unlocking an organization's full potential by fostering a culture centered on user-centric innovation and consistently challenging the limits of what is achievable.<br /><br />
-            Most recently, As VP of Engineering at Backflip, I led the launch and expansion of their Real Estate Investment mobile applications for iOS and Android.
+          With over fifteen years in the tech industry, I have spearheaded software teams in <b>crafting cutting-edge SaaS and mobile applications</b>, steering them from conceptualization to successful launch. I thrives on igniting an organization's maximum potential, <b>cultivating a culture rooted in user-centric innovation</b>, and continually pushing the boundaries of what is attainable. My passion lies in leveraging <b>agile methodologies, rapid prototyping, and lean startup principles</b> to drive product development and deliver scalable solutions in fast-paced startup environments.</p>
+          <p className="pt-6 font-body leading-relaxed text-grey-20">
+            Most recently, As <b>VP of Engineering at Backflip</b>, I established the engineering teams and led the <b>launch of their flagship iOS and Android apps</b>. Throughout my tenure there, I guided the team through a <b>successful Series A funding round</b> and played a pivotal role in <b>architecting and building Backflip's engineering and IT infrastructure</b>, ensuring scalability and resilience to support rapid expansion and innovation.
           </p>
           <div className="flex flex-col justify-center pt-6 sm:flex-row lg:justify-start">
             {/* ToDo: update copy and values */}
@@ -42,18 +43,18 @@ const About = () => {
           <div className="pt-6">
             <div className="flex items-end justify-between">
               <h4 className="font-header3 font-semibold uppercase text-black">
-                Web App Development
+                Lean Startup Methodologies 
               </h4>
-              <h3 className="font-body text-3xl font-bold text-primary">97%</h3>
+              <h3 className="font-body text-3xl font-bold text-primary">100%</h3>
             </div>
             <div className="mt-2 h-3 w-full rounded-full bg-lila">
-              <div className="h-3 rounded-full bg-coral" style={{ width: '97%' }}></div>
+              <div className="h-3 rounded-full bg-coral" style={{ width: '100%' }}></div>
             </div>
           </div>
           <div className="pt-6">
             <div className="flex items-end justify-between">
               <h4 className="font-header3 font-semibold uppercase text-black">
-                Mobile App Development
+                Application Development
               </h4>
               <h3 className="font-body text-3xl font-bold text-primary">95%</h3>
             </div>
