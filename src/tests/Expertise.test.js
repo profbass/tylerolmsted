@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Expertise from './Expertise';
+import Expertise from '../components/Expertise';
 
 test('renders expertise data correctly', () => {
   render(<Expertise />);
