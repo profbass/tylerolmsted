@@ -8,7 +8,7 @@ import Experience from './components/Experience';
 import Statistics from './components/Statistics';
 import Contact from './components/Contact';
 import Subscribe from './components/Subscribe';
-import Footer from './Footer';
+import Footer from './components/Footer';
 
 export default function App() {
   return (
@@ -29,6 +29,6 @@ export default function App() {
       </div>
       <Subscribe />
       <Footer />
-  </div>
+    </div>
   );
 }
