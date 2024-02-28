@@ -19,16 +19,16 @@ export default function App() {
           <Navigation />
         </div>
       </div>
-      <Hero />
       <div className="bg-grey-50">
+        <Hero />
         <About />
         <Expertise />
         <Experience />
         <Statistics />
         <Contact />
+        <Subscribe />
+        <Footer />
       </div>
-      <Subscribe />
-      <Footer />
     </div>
   );
 }
