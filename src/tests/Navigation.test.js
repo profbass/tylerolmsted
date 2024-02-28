@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Navigation from './Navigation';
+import Navigation from '../components/Navigation';
 
 test('renders navigation menu items', () => {
   // Mock menu items

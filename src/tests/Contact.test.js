@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import Contact from './Contact';
+import Contact from '../components/Contact';
 
 test('renders contact form', () => {
   render(<Contact />);

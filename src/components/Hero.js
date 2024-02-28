@@ -44,7 +44,7 @@ const Hero = () => {
                                         className="bx bxl-instagram text-2xl text-white hover:text-yellow"
                                     ></i>
                                 </a>
-                                <a href="https://google.com" className="pl-4">
+                                <a href="#contact" className="pl-4">
                                     <i
                                         className="bx bx-envelope text-2xl text-white hover:text-yellow"
                                     ></i>

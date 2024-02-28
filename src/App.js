@@ -1,13 +1,13 @@
 import './App.css';
-import Logo from './Logo';
-import Navigation from './Navigation';
-import Hero from './Hero';
-import About from './About';
-import Expertise from './Expertise';
-import Experience from './Experience';
-import Statistics from './Statistics';
-import Contact from './Contact';
-import Subscribe from './Subscribe';
+import Logo from './components/Logo';
+import Navigation from './components/Navigation';
+import Hero from './components/Hero';
+import About from './components/About';
+import Expertise from './components/Expertise';
+import Experience from './components/Experience';
+import Statistics from './components/Statistics';
+import Contact from './components/Contact';
+import Subscribe from './components/Subscribe';
 import Footer from './Footer';
 
 export default function App() {

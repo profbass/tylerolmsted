@@ -13,10 +13,10 @@ const Experience = () => {
       logo: '/img/logo-remax.svg',
       years: '2017 - 2022',
       position: 'Executive Director of Engineering',
-      description: `In his role as Executive Director of Engineering, Tyler's responsibilities included
+      description: `In my role as Executive Director of Engineering, Tyler's responsibilities included
       overseeing the roadmaps, processes, personnel, resourcing, and budgets for RE/
       MAX's product engineering teams following the booj acquisition. Collaborating closely
-      with the product, support, and training teams, Tyler played a key role in developing and
+      with the product, support, and training teams, I played a key role in developing and
       maintaining RE/MAX's top-tier technology platform`
     },
     {
@@ -24,7 +24,7 @@ const Experience = () => {
       logo: '/img/logo-backflip.svg',
       years: '2022 - 2024',
       position: 'Vice President of Engineering',
-      description: `Joining Backflip in early 2022, Tyler established the engineering teams and led the launch of the flagship iOS and Android apps. Throughout his tenure, Tyler guided the team through a successful Series A funding round. Tyler played a pivotal role in architecting and building the company's engineering and IT infrastructure, ensuring scalability and resilience to support rapid expansion and innovation.`
+      description: `Joining Backflip in early 2022, i established the engineering teams and led the launch of the flagship iOS and Android apps. Throughout my tenure, I guided the team through a successful Series A funding round. I played a pivotal role in architecting and building the company's engineering and IT infrastructure, ensuring scalability and resilience to support rapid expansion and innovation.`
     }
   ];
 

@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Experience from './Experience';
+import Experience from '../components/Experience';
 
 test('renders work experience section', () => {
   render(<Experience />);

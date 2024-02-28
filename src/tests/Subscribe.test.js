@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import Subscribe from './Subscribe';
+import Subscribe from '../components/Subscribe';
 
 test('renders subscribe component', () => {
   render(<Subscribe />);
