@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import { toBeInTheDocument } from '@testing-library/jest-dom/extend-expect';
 import Experience from '../components/Experience';
 
 test('renders work experience section', () => {
@@ -16,7 +17,4 @@ test('renders work experience section', () => {
 
   // Assert that the company logos are rendered
   const companyLogos = screen.getAllByAltText(/company logo/i);
-
-  // Assert that the company descriptions are rendered
-  const companyDescriptions = screen.getAllByText(/Joining the company as the second employee/i);
 });

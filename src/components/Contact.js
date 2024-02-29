@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 
-
-
 const Contact = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -10,12 +8,14 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // const data = {
-    //   name,
-    //   email,
-    //   message,
-    // };
+    const data = {
+      name,
+      email,
+      message,
+    };
     setSuccess(true);
+    console.log(data);
+    return data;
   };
 
   return (
