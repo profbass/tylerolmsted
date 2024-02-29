@@ -1,10 +1,11 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import Subscribe from '../components/Subscribe';
+import { toBeInTheDocument } from '@testing-library/jest-dom/matchers';
 
-test('renders subscribe component', () => {
+expect.extend({ toBeInTheDocument });
+
+test('render the subscribe component', () => {
   render(<Subscribe />);
-  
-  // Assert that the component renders without errors
   const subscribeComponent = screen.getByTestId('subscribe-component');
   expect(subscribeComponent).toBeInTheDocument();
 });

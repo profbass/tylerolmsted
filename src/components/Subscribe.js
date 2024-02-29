@@ -7,7 +7,11 @@ const Subscribe = () => {
   };
 
   return (
-    <div className="relative bg-primary bg-cover bg-center bg-no-repeat py-16 bg-blend-multiply lg:py-24" style={{backgroundImage: 'url(/img/bg-hero3.jpg)'}}>
+    <div 
+      data-testid="subscribe-component" 
+      className="relative bg-primary bg-cover bg-center bg-no-repeat py-16 bg-blend-multiply lg:py-24" 
+      style={{backgroundImage: 'url(/img/bg-hero3.jpg)'}}
+    >
       <div className="container relative z-30">
         <h3 className="text-center font-header text-3xl uppercase leading-tight tracking-wide text-white sm:text-4xl lg:text-5xl">
           Keep <span className="font-bold">up-to-date</span> <br />
