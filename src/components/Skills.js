@@ -9,7 +9,7 @@ const Skills = () => {
         { label: 'Strategic Vision', percentage: 100 },
         { label: 'Technical Leadership', percentage: 100 },
         { label: 'Lean Startup Methodologies', percentage: 100 },
-        { label: 'Application Development', percentage: 50 },
+        { label: 'Application Development', percentage: 100 },
     ], []);
 
     useEffect(() => {
