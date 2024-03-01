@@ -1,8 +1,7 @@
-
 import React, { useEffect, useRef, useMemo, useState } from 'react';
+import CountUp from 'react-countup';
 
 const Skills = () => {
-    const graphRef = useRef(null);
     const [animate, setAnimate] = useState(false);
 
     const data = useMemo(() => [
@@ -12,31 +11,35 @@ const Skills = () => {
         { label: 'Application Development', percentage: 100 },
     ], []);
 
+    const graphRefs = useRef([]);
+
     useEffect(() => {
-        const animateGraph = () => {
-            const graphBars = graphRef.current.querySelectorAll('.h-3');
-
-            graphBars.forEach((bar, index) => {
-                const width = data[index].percentage + '%';
-                bar.style.width = width;
-            });
+        const animateGraph = (index) => {
+            const bar = graphRefs.current[index];
+            const width = data[index].percentage + '%';
+            bar.style.width = width;
         };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    setAnimate(true);
-                    observer.unobserve(entry.target);
-                }
+    
+        const observers = graphRefs.current.map((ref, index) => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        animateGraph(index);
+                        setTimeout(() => setAnimate(true), 0);
+                        observer.unobserve(entry.target);
+                    }
+                });
             });
+    
+            observer.observe(ref);
+    
+            return observer;
         });
-
-        observer.observe(graphRef.current);
-
+    
         return () => {
-            observer.disconnect();
+            observers.forEach(observer => observer.disconnect());
         };
-    }, [data]); // Include 'data' in the dependency array
+    }, [data]);
 
     return (
         <div className="w-full pl-0 pt-10 sm:w-3/4 lg:w-2/5 lg:pl-12 lg:pt-0">
@@ -44,19 +47,19 @@ const Skills = () => {
                 <div className="pt-6" key={index}>
                     <div className="flex items-end justify-between">
                         <h4 className="font-header3 font-semibold uppercase text-black">{item.label}</h4>
-                        <h3 className="font-body text-3xl font-bold text-primary">{animate ? item.percentage : 0}%</h3>
+                        <h3 className="font-body text-3xl font-bold text-primary">
+                            <CountUp end={animate ? item.percentage : 0} duration={2} />
+                            %
+                        </h3>
                     </div>
-                    <div className="mt-2 h-3 w-full rounded-full bg-lila">
+                    <div className="mt-2 h-3 w-full rounded-full bg-lila" ref={el => graphRefs.current[index] = el}>
                         {/* Animate the width */}
                         <div className={`h-3 rounded-full bg-coral ${animate ? 'animate-width' : ''}`} style={{ width: `${animate ? item.percentage : 0}%` }}></div>
                     </div>
                 </div>
             ))}
-            <div ref={graphRef}></div>
         </div>
     );
 };
 
 export default Skills;
-
-
