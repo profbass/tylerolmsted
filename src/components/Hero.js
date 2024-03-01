@@ -1,5 +1,6 @@
 import Button from "./Button";
 import SocialLinks from "./SocialLinks";
+import Avatar from "./Avatar";
 
 const Hero = () => {
     return (
@@ -8,13 +9,7 @@ const Hero = () => {
 
             <div className="container relative z-30 pt-20 pb-12 sm:pt-56 sm:pb-48 lg:pt-64 lg:pb-48">
                 <div className="flex flex-col items-center justify-center lg:flex-row">
-                    <div className="rounded-full border-8 border-yellow shadow-xl hover: transform hover:scale-105 transition-all">
-                        <img
-                            src={process.env.PUBLIC_URL + "/img/blog-author.jpg"}
-                            className="h-48 rounded-full sm:h-56"
-                            alt="author"
-                        />
-                    </div>
+                    <Avatar />
                     <div className="pt-8 sm:pt-10 lg:pl-8 lg:pt-0">
                         <h1 className="text-center font-header text-4xl text-white sm:text-left sm:text-5xl md:text-6xl">
                             Oh, hello! It's me, Tyler
