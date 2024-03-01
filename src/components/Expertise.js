@@ -52,7 +52,7 @@ const Expertise = () => {
             {expertiseData.map((item, index) => (
             <div
                 key={index}
-                className="group bg-primary rounded px-8 py-12 shadow hover:bg-white transition-all duration-300"
+                className="group bg-primary rounded px-8 py-12 shadow hover:bg-white transition-all duration-300 transform hover:scale-105"
             >
                 <div className="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
                 <div className="block group-hover:hidden">
