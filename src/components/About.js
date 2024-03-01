@@ -1,3 +1,5 @@
+import Skills from "./Skills";
+
 const About = () => {
   return (
     
@@ -16,53 +18,9 @@ const About = () => {
             Most recently, As <b>VP of Engineering at Backflip</b>, I established the engineering teams and led the <b>launch of their flagship iOS and Android apps</b>. Throughout my tenure there, I guided the team through a <b>successful Series A funding round</b> and played a pivotal role in <b>architecting and building Backflip's engineering and IT infrastructure</b>, ensuring scalability and resilience to support rapid expansion and innovation.
           </p>
           <div className="flex flex-col justify-center pt-6 sm:flex-row lg:justify-start">
-            {/* ToDo: update copy and values */}
           </div>
         </div>
-        <div className="w-full pl-0 pt-10 sm:w-3/4 lg:w-2/5 lg:pl-12 lg:pt-0">
-          <div>
-            <div className="flex items-end justify-between">
-              <h4 className="font-header3 font-semibold uppercase text-black">
-                Strategic Vision
-              </h4>
-              <h3 className="font-body text-3xl font-bold text-primary">100%</h3>
-            </div>
-            <div className="mt-2 h-3 w-full rounded-full bg-lila">
-              <div className="h-3 rounded-full bg-coral" style={{ width: '100%' }}></div>
-            </div>
-          </div>
-          <div className="pt-6">
-            <div className="flex items-end justify-between">
-              <h4 className="font-header3 font-semibold uppercase text-black">Technical Leadership</h4>
-              <h3 className="font-body text-3xl font-bold text-primary">100%</h3>
-            </div>
-            <div className="mt-2 h-3 w-full rounded-full bg-lila">
-              <div className="h-3 rounded-full bg-coral" style={{ width: '100%' }}></div>
-            </div>
-          </div>
-          <div className="pt-6">
-            <div className="flex items-end justify-between">
-              <h4 className="font-header3 font-semibold uppercase text-black">
-                Lean Startup Methodologies 
-              </h4>
-              <h3 className="font-body text-3xl font-bold text-primary">100%</h3>
-            </div>
-            <div className="mt-2 h-3 w-full rounded-full bg-lila">
-              <div className="h-3 rounded-full bg-coral" style={{ width: '100%' }}></div>
-            </div>
-          </div>
-          <div className="pt-6">
-            <div className="flex items-end justify-between">
-              <h4 className="font-header3 font-semibold uppercase text-black">
-                Application Development
-              </h4>
-              <h3 className="font-body text-3xl font-bold text-primary">95%</h3>
-            </div>
-            <div className="mt-2 h-3 w-full rounded-full bg-lila">
-              <div className="h-3 rounded-full bg-coral" style={{ width: '95%' }}></div>
-            </div>
-          </div>
-        </div>
+        <Skills />
       </div>
     </div>
   );

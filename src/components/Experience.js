@@ -43,7 +43,7 @@ const Experience = () => {
           <div key={index} className="mt-8 flex flex-col text-center md:flex-row md:text-left">
             <div className="md:w-2/5">
               <div className="flex justify-center md:justify-start">
-                <span className="shrink-0">
+                <span className="shrink-0 hover: transform hover:scale-125 transition-all">
                   <img src={experience.logo} className="h-auto w-32" alt="company logo" />
                 </span>
                 <div className="relative ml-3 hidden w-full md:block">
