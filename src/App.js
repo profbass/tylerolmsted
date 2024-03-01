@@ -16,7 +16,7 @@ export default function App() {
       <div className="w-full z-50 top-0 py-3 sm:py-5  absolute">
         <div className="container flex items-center justify-between">
           <Logo />
-          <Navigation />
+          <Navigation /> 
         </div>
       </div>
       <div className="bg-grey-50">

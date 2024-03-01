@@ -1,3 +1,5 @@
+import Button from "./Button";
+
 const Hero = () => {
     return (
         <div className="relative bg-cover bg-center bg-no-repeat py-8" style={{backgroundImage: `url(${process.env.PUBLIC_URL}/img/bg-hero.jpg)`}}>
@@ -17,14 +19,20 @@ const Hero = () => {
                             Oh, hello! It's me, Tyler
                         </h1>
                         <div className="flex items-center justify-center pt-5 mt-5 sm:justify-start sm:pt-0">
-                            <a
+                            {/* <a
                                 href="https://tylerco-assets.s3.us-east-2.amazonaws.com/Tyler-Olmsted-Resume.pdf"
                                 target="_blank"
                                 rel="noreferrer"
                                 className="rounded bg-yellow px-4 py-2 font-body text-sm font-bold uppercase text-primary hover:bg-grey-20"
                             >
                                 My Resume
-                            </a>
+                            </a> */}
+                            <Button
+                                size="sm"
+                                text="My Resume"
+                                link="https://tylerco-assets.s3.us-east-2.amazonaws.com/Tyler-Olmsted-Resume.pdf"
+                                isNewTab={true}
+                            />
                         </div>
                         <div className="flex flex-col justify-center pt-3 sm:flex-row sm:pt-5 lg:justify-start">
                             <div className="flex items-center justify-center pl-0 sm:justify-start md:pl-0">

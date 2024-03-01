@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Button from './Button';
 
 const Contact = () => {
   const [name, setName] = useState('');
@@ -62,13 +63,12 @@ const Contact = () => {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
         ></textarea>
-        <button
-          className="mt-6 flex items-center justify-center rounded bg-primary px-8 py-3 font-header text-lg font-bold uppercase text-white hover:bg-grey-20"
+        <Button
+          size="lg"
+          text="Send"
           type="submit"
-        >
-          Send
-          <i className="bx bx-chevron-right relative -right-2 text-3xl"></i>
-        </button>
+          iconClass="bx-chevron-right"
+        />
       </form>
       <div className="flex flex-col pt-16 lg:flex-row">
         <div className="w-full border-l-2 border-t-2 border-r-2 border-b-2 border-grey-60 px-6 py-6 sm:py-8 lg:w-1/3">
