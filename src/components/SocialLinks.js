@@ -5,18 +5,21 @@ const socialMediaData = [
     platform: 'LinkedIn',
     link: 'https://www.linkedin.com/in/tyler-olmsted-8476716/',
     iconClass: 'bx bxl-linkedin',
+    target: '_blank',
     iconText: 'text-2xl text-white hover:text-yellow',
   },
   {
     platform: 'Instagram',
     link: 'https://www.instagram.com/slimanddangerous/',
     iconClass: 'bx bxl-instagram',
+    target: '_blank',
     iconText: 'text-2xl text-white hover:text-yellow',
   },
   {
     platform: 'Email',
     link: '#contact',
     iconClass: 'bx bx-envelope',
+    target: '_self',
     iconText: 'text-2xl text-white hover:text-yellow',
   },
 ];
@@ -28,7 +31,7 @@ const SocialLinks = () => {
         <a
           key={index}
           href={socialMedia.link}
-          target="_blank"
+          target={socialMedia.target}
           rel="noreferrer"
           className="pl-4 hover: transform hover:scale-110 transition-all"
         >

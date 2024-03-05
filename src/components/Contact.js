@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import Button from './Button';
+import FadeInElement from "../utils/FadeInElement";
+
+const { fadeElementIn } = FadeInElement;
 
 const Contact = () => {
   const [name, setName] = useState('');
@@ -70,7 +73,7 @@ const Contact = () => {
           iconClass="bx-chevron-right"
         />
       </form>
-      <div className="flex flex-col pt-16 lg:flex-row">
+      <div ref={fadeElementIn} className="flex flex-col pt-16 lg:flex-row">
         <div className="w-full border-l-2 border-t-2 border-r-2 border-b-2 border-grey-60 px-6 py-6 sm:py-8 lg:w-1/3">
           <div className="flex items-center">
             <i className="bx bx-phone text-2xl text-grey-40"></i>

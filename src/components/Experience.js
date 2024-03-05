@@ -1,5 +1,9 @@
+import FadeInElement from "../utils/FadeInElement";
+
+const { fadeElementIn } = FadeInElement;
 
 const Experience = () => {
+
   const workExperience = [
     {
       company: 'booj',
@@ -13,11 +17,7 @@ const Experience = () => {
       logo: '/img/logo-remax.svg',
       years: '2017 - 2022',
       position: 'Executive Director of Engineering',
-      description: `In my role as Executive Director of Engineering, Tyler's responsibilities included
-      overseeing the roadmaps, processes, personnel, resourcing, and budgets for RE/
-      MAX's product engineering teams following the booj acquisition. Collaborating closely
-      with the product, support, and training teams, I played a key role in developing and
-      maintaining RE/MAX's top-tier technology platform`
+      description: `In my role as Executive Director of Engineering, Tyler's responsibilities included overseeing the roadmaps, processes, personnel, resourcing, and budgets for RE/MAX's product engineering teams following the booj acquisition. Collaborating closely with the product, support, and training teams, I played a key role in developing and maintaining RE/MAX's top-tier technology platform`
     },
     {
       company: 'Backflip',
@@ -36,11 +36,11 @@ const Experience = () => {
       <h3 className="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
         Here's where I've been
       </h3>
-      <div className="relative mx-auto mt-12 flex w-full flex-col lg:w-2/3">
+      <div ref={fadeElementIn} className="relative mx-auto mt-12 flex w-full flex-col lg:w-2/3">
         <span className="left-2/5 absolute inset-y-0 ml-10 hidden w-0.5 bg-grey-40 md:block"></span>
 
         {workExperience.map((experience, index) => (
-          <div key={index} className="mt-8 flex flex-col text-center md:flex-row md:text-left">
+          <div key={index} className="mt-8 flex flex-col text-center md:flex-row md:text-left transition-all will-change-transform">
             <div className="md:w-2/5">
               <div className="flex justify-center md:justify-start">
                 <span className="shrink-0 hover: transform hover:scale-125 transition-all">

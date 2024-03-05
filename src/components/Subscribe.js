@@ -1,10 +1,12 @@
 import React from 'react';
 import Button from './Button';
+import FadeInElement from "../utils/FadeInElement";
+
+const { fadeElementIn } = FadeInElement;
 
 const Subscribe = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your logic for form submission here
   };
 
   return (
@@ -13,7 +15,7 @@ const Subscribe = () => {
       className="relative bg-primary bg-cover bg-center bg-no-repeat py-16 bg-blend-multiply lg:py-24" 
       style={{backgroundImage: 'url(/img/bg-hero3.jpg)'}}
     >
-      <div className="container relative z-30">
+      <div ref={fadeElementIn} className="container relative z-30 transition-all will-change-transform">
         <h3 className="text-center font-header text-3xl uppercase leading-tight tracking-wide text-white sm:text-4xl lg:text-5xl">
           Keep <span className="font-bold">up-to-date</span> <br />
           with what I'm up to

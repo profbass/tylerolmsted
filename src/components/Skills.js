@@ -53,7 +53,6 @@ const Skills = () => {
                         </h3>
                     </div>
                     <div className="mt-2 h-3 w-full rounded-full bg-lila" ref={el => graphRefs.current[index] = el}>
-                        {/* Animate the width */}
                         <div className={`h-3 rounded-full bg-coral ${animate ? 'animate-width' : ''}`} style={{ width: `${animate ? item.percentage : 0}%` }}></div>
                     </div>
                 </div>
