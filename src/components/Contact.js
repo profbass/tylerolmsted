@@ -10,16 +10,29 @@ const Contact = () => {
   const [message, setMessage] = useState('');
   const [success, setSuccess] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const data = {
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+  
+    const formData = {
       name,
       email,
-      message,
+      message
     };
-    setSuccess(true);
-    console.log(data);
-    return data;
+  
+    const response = await fetch('https://m3pcqudze9.execute-api.us-east-2.amazonaws.com/production', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+  
+    if (!response.ok) {
+      throw new Error('Something went wrong');
+    }
+  
+    const responseBody = await response.json();
+    console.log(responseBody); // Handle success
   };
 
   return (
