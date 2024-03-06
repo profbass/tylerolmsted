@@ -1,17 +1,33 @@
 import React, { useState } from 'react';
 import Button from './Button';
-import FadeInElement from "../utils/FadeInElement";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { Flip } from 'react-toastify';
+// import FadeInElement from "../utils/FadeInElement";
 
-const { fadeElementIn } = FadeInElement;
+// const { fadeElementIn } = FadeInElement;
 
 const Contact = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-  const [success, setSuccess] = useState(false);
+  
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    
+    const notify = (e) => toast(e, {
+      position: "bottom-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      progressStyle: { backgroundColor: "#ff775e" },
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      transition: Flip,
+    });
   
     const formData = {
       name,
@@ -28,11 +44,15 @@ const Contact = () => {
     });
   
     if (!response.ok) {
+      notify("Uh oh, something went wrong. Please try again.");
       throw new Error('Something went wrong');
     } else {
-      setSuccess(true);
+      notify("Thanks for reaching out! 🎉 I can't wait to connect with you.");
+      // setName(''); // Reset name field
+      // setEmail(''); // Reset email field
+      // setMessage(''); // Reset message field
     }
-  
+
     const responseBody = await response.text();
     console.log(responseBody); // Handle success
   };
@@ -45,14 +65,6 @@ const Contact = () => {
       <h4 className="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
         The power of connection is everything, I would love to hear from you!
       </h4>
-      {success && (
-        <div className="flex justify-center pt-10">
-          <div className="w-1/2 bg-green-100 border-l-4 border-green-500 text-green-700 p-4" role="alert">
-            <p className="font-bold">Success!</p>
-            <p>Your message has been sent successfully. I'll be in touch soon!</p>
-          </div>
-        </div>
-      )}
       <form className="mx-auto w-full pt-10 sm:w-3/4" onSubmit={handleSubmit}>
         <div className="flex flex-col md:flex-row">
           <input
@@ -66,7 +78,7 @@ const Contact = () => {
           <input
             className="mt-6 w-full rounded border-grey-50 px-4 py-3 font-body text-black md:mt-0 md:ml-3 md:w-1/2 lg:ml-5"
             placeholder="Email"
-            type="text"
+            type="email"
             id="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -88,7 +100,7 @@ const Contact = () => {
           iconClass="bx-chevron-right"
         />
       </form>
-      <div ref={fadeElementIn} className="flex flex-col pt-16 lg:flex-row">
+      <div className="flex flex-col pt-16 lg:flex-row">
         <div className="w-full border-l-2 border-t-2 border-r-2 border-b-2 border-grey-60 px-6 py-6 sm:py-8 lg:w-1/3">
           <div className="flex items-center">
             <i className="bx bx-phone text-2xl text-grey-40"></i>
@@ -111,6 +123,7 @@ const Contact = () => {
           <p className="pt-2 text-left font-body font-bold text-primary lg:text-lg">Denver CO, 80224 USA</p>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };
