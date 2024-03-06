@@ -1,4 +1,7 @@
-// Code for the Statistics section of the home page
+// import FadeInElement from "../utils/FadeInElement";
+
+// const { fadeElementIn } = FadeInElement;
+
 const statsObjects = [
   { icon: '/img/icon-project.svg', number: '50+', text: 'Projects Delivered' },
   { icon: '/img/icon-award.svg', number: '5', text: 'Awards Won' },
