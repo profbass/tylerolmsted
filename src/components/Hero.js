@@ -1,24 +1,24 @@
-import React, { useEffect, useRef } from 'react';
+// import React, { useEffect, useRef } from 'react';
 import Button from "./Button";
 import SocialLinks from "./SocialLinks";
 import Avatar from "./Avatar";
-import FadeInElement from "../utils/FadeInElement";
+// import FadeInElement from "../utils/FadeInElement";
 
-const { fadeElementIn } = FadeInElement;
+// const { fadeElementIn } = FadeInElement;
 
 const Hero = () => {
-    const elementRef = useRef(null);
+    // const elementRef = useRef(null);
 
-    useEffect(() => {
-        if (elementRef.current) {
-            fadeElementIn(elementRef.current, 1000, -10, true);
-        }
-    }, []);
+    // useEffect(() => {
+    //     if (elementRef.current) {
+    //         fadeElementIn(elementRef.current, 1000, -10, true);
+    //     }
+    // }, []);
 
     return (
         <div className="relative bg-cover bg-center bg-no-repeat py-8" style={{backgroundImage: `url(${process.env.PUBLIC_URL}/img/bg-hero.jpg)`}}>
             <div className="absolute inset-0 z-20 bg-gradient-to-r from-hero-gradient-from to-hero-gradient-to bg-cover bg-center bg-no-repeat"></div>
-            <div ref={elementRef} className="container relative z-30 pt-20 pb-12 sm:pt-56 sm:pb-48 lg:pt-64 lg:pb-48 transition-all opacity-0">
+            <div className="container relative z-30 pt-20 pb-12 sm:pt-56 sm:pb-48 lg:pt-64 lg:pb-48 transition-all">
                 <div className="flex flex-col items-center justify-center lg:flex-row">
                     <Avatar />
                     <div className="pt-8 sm:pt-10 lg:pl-8 lg:pt-0">

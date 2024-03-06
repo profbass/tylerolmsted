@@ -1,6 +1,6 @@
-import FadeInElement from "../utils/FadeInElement";
+// import FadeInElement from "../utils/FadeInElement";
 
-const { fadeElementIn } = FadeInElement;
+// const { fadeElementIn } = FadeInElement;
 
 const Expertise = () => {
     const expertiseData = [
@@ -43,7 +43,7 @@ const Expertise = () => {
     ];
 
     return (
-        <div ref={fadeElementIn} className="container relative py-16 md:py-20 transition-all opacity-0" id="services">
+        <div className="container relative py-16 md:py-20 transition-all" id="services">
             <h2 className="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
                 What I do
             </h2>

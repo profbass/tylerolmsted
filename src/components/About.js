@@ -1,12 +1,13 @@
 import Skills from "./Skills";
-import FadeInElement from "../utils/FadeInElement";
+// import FadeInElement from "../utils/FadeInElement";
 
-const { fadeElementIn } = FadeInElement;
+// const { fadeElementIn } = FadeInElement;
+// ref={fadeElementIn}
 
 const About = () => {
 
   return (
-    <div id="about" ref={fadeElementIn} className="transition-all opacity-0 will-change-auto">
+    <div id="about" className="transition-all will-change-auto">
       <div className="container flex flex-col items-center py-16 md:py-20 lg:flex-row">
         <div className="w-full text-center sm:w-3/4 lg:w-3/5 lg:text-left">
           <h2 className="font-header2 font-semibold uppercase text-4xl text-primary sm:text-5xl lg:text-6xl">

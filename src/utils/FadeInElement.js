@@ -3,7 +3,7 @@ class FadeInElement {
     static animationStarted = false;
 
     static fadeElementIn(element, duration = 500, translateY = -10, translateYBool = false) {
-        element.style.opacity = '0';
+        // element.style.opacity = '0';
         if (translateYBool) {
             element.style.transform = `translateY(${translateY}px)`;
         }

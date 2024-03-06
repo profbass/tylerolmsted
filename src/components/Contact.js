@@ -19,7 +19,7 @@ const Contact = () => {
       message
     };
   
-    const response = await fetch('https://m3pcqudze9.execute-api.us-east-2.amazonaws.com/production', {
+    const response = await fetch('https://m3pcqudze9.execute-api.us-east-2.amazonaws.com/production/submitContactForm', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -29,9 +29,11 @@ const Contact = () => {
   
     if (!response.ok) {
       throw new Error('Something went wrong');
+    } else {
+      setSuccess(true);
     }
   
-    const responseBody = await response.json();
+    const responseBody = await response.text();
     console.log(responseBody); // Handle success
   };
 
@@ -99,7 +101,7 @@ const Contact = () => {
             <i className="bx bx-envelope text-2xl text-grey-40"></i>
             <p className="pl-2 font-body font-bold uppercase text-grey-40 lg:text-lg">My Email</p>
           </div>
-          <p className="pt-2 text-left font-body font-bold text-primary lg:text-lg">me@tylerolmsted.co</p>
+          <p className="pt-2 text-left font-body font-bold text-primary lg:text-lg">tylerdolmsted@gmail.com</p>
         </div>
         <div className="w-full border-l-2 border-t-0 border-r-2 border-b-2 border-grey-60 px-6 py-6 sm:py-8 lg:w-1/3 lg:border-l-0 lg:border-t-2">
           <div className="flex items-center">

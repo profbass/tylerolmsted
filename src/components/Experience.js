@@ -1,6 +1,6 @@
-import FadeInElement from "../utils/FadeInElement";
+// import FadeInElement from "../utils/FadeInElement";
 
-const { fadeElementIn } = FadeInElement;
+// const { fadeElementIn } = FadeInElement;
 
 const Experience = () => {
 
@@ -17,7 +17,7 @@ const Experience = () => {
       logo: '/img/logo-remax.svg',
       years: '2017 - 2022',
       position: 'Executive Director of Engineering',
-      description: `In my role as Executive Director of Engineering, Tyler's responsibilities included overseeing the roadmaps, processes, personnel, resourcing, and budgets for RE/MAX's product engineering teams following the booj acquisition. Collaborating closely with the product, support, and training teams, I played a key role in developing and maintaining RE/MAX's top-tier technology platform`
+      description: `In my role as Executive Director of Engineering, my's responsibilities included overseeing the roadmaps, processes, personnel, resourcing, and budgets for RE/MAX's product engineering teams following the booj acquisition. Collaborating closely with the product, support, and training teams, I played a key role in developing and maintaining RE/MAX's top-tier technology platform`
     },
     {
       company: 'Backflip',
@@ -36,7 +36,7 @@ const Experience = () => {
       <h3 className="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
         Here's where I've been
       </h3>
-      <div ref={fadeElementIn} className="relative mx-auto mt-12 flex w-full flex-col lg:w-2/3">
+      <div className="relative mx-auto mt-12 flex w-full flex-col lg:w-2/3">
         <span className="left-2/5 absolute inset-y-0 ml-10 hidden w-0.5 bg-grey-40 md:block"></span>
 
         {workExperience.map((experience, index) => (
