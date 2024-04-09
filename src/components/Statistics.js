@@ -1,12 +1,10 @@
-// import FadeInElement from "../utils/FadeInElement";
-
-// const { fadeElementIn } = FadeInElement;
+import Reveal from "../utils/Reveal";
 
 const statsObjects = [
-  { icon: '/img/icon-project.svg', number: '50+', text: 'Projects Delivered' },
-  { icon: '/img/icon-award.svg', number: '5', text: 'Awards Won' },
-  { icon: '/img/icon-happy.svg', number: '100%', text: 'Client Satisfaction' },
-  { icon: '/img/icon-puzzle.svg', number: '0', text: 'Critical Issues' },
+  { icon: '/img/icon-project.svg', number: '50+', text: 'Projects Delivered', delay: '0.2'},
+  { icon: '/img/icon-award.svg', number: '5', text: 'Awards Won', delay: '0.4'},
+  { icon: '/img/icon-happy.svg', number: '100%', text: 'Client Satisfaction', delay: '0.6'},
+  { icon: '/img/icon-puzzle.svg', number: '0', text: 'Critical Issues', delay: '0.8'},
 ];
 
 const Statistics = () => {
@@ -16,15 +14,17 @@ const Statistics = () => {
         <div className="mx-auto w-5/6 bg-white py-16 shadow md:w-11/12 lg:py-20 xl:py-24 2xl:w-full">
           <div className="grid grid-cols-2 gap-5 md:gap-8 xl:grid-cols-4 xl:gap-5">
           {statsObjects.map((stat, index) => (
-            <div key={index} className="flex flex-col items-center justify-center text-center md:flex-row md:text-left hover: transform hover:scale-110 transition-all">
-              <div>
-                <img src={stat.icon} className="mx-auto h-12 w-auto md:h-20" alt="icon project" />
+            <Reveal key={index} delayInView={stat.delay}>
+              <div key={index} className="flex flex-col py-3 items-center justify-center text-center md:flex-row md:text-left hover: transform hover:scale-110 transition-all">
+                <div>
+                  <img src={stat.icon} className="mx-auto h-12 w-auto md:h-20" alt="icon project" />
+                </div>
+                <div className="pt-5 md:pl-5 md:pt-0">
+                  <h1 className="font-body text-2xl font-bold text-primary md:text-4xl">{stat.number}</h1>
+                  <h4 className="text-grey-dark font-header text-base font-medium leading-loose md:text-xl">{stat.text}</h4>
+                </div>
               </div>
-              <div className="pt-5 md:pl-5 md:pt-0">
-                <h1 className="font-body text-2xl font-bold text-primary md:text-4xl">{stat.number}</h1>
-                <h4 className="text-grey-dark font-header text-base font-medium leading-loose md:text-xl">{stat.text}</h4>
-              </div>
-            </div>
+            </Reveal>
           ))}
           </div>
         </div>
