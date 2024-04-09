@@ -1,7 +1,4 @@
-// import FadeInElement from "../utils/FadeInElement";
-
-// const { fadeElementIn } = FadeInElement;
-
+import Reveal from "../utils/Reveal";
 const Experience = () => {
 
   const workExperience = [
@@ -10,6 +7,7 @@ const Experience = () => {
       logo: '/img/logo-booj.svg',
       years: '2007 - 2017',
       position: 'Director of Production',
+      delay: '0.7',
       description: `Joining the company as employee #2, I was instrumental in founding and scaling the engineering teams at booj, driving growth from 0 to 70 team members over the span of a decade. My leadership was integral to the development of booj’s award winning real estate platform, ultimately leading to its acquisition by RE/MAX in 2017. I was responsible for supervising the teams tasked with crafting core products, such as the home search mobile apps, Agent web/mobile CRM, CMS website builder, lead management engine, marketing campaign tools, and a real estate reporting suite.`
     },
     {
@@ -17,6 +15,7 @@ const Experience = () => {
       logo: '/img/logo-remax.svg',
       years: '2017 - 2022',
       position: 'Executive Director of Engineering',
+      delay: '0.9',
       description: `In my role as Executive Director of Engineering, my's responsibilities included overseeing the roadmaps, processes, personnel, resourcing, and budgets for RE/MAX's product engineering teams following the booj acquisition. Collaborating closely with the product, support, and training teams, I played a key role in developing and maintaining RE/MAX's top-tier technology platform`
     },
     {
@@ -24,22 +23,28 @@ const Experience = () => {
       logo: '/img/logo-backflip.svg',
       years: '2022 - 2024',
       position: 'Vice President of Engineering',
+      delay: '1.1',
       description: `Joining Backflip in early 2022, i established the engineering teams and led the launch of the flagship iOS and Android apps. Throughout my tenure, I guided the team through a successful Series A funding round. I played a pivotal role in architecting and building the company's engineering and IT infrastructure, ensuring scalability and resilience to support rapid expansion and innovation.`
     }
   ];
 
   return (
     <div className="container py-16 md:py-20" id="work">
-      <h2 className="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
-        My work experience
-      </h2>
-      <h3 className="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
-        Here's where I've been
-      </h3>
+      <Reveal>
+        <h2 className="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
+          My work experience
+        </h2>
+      </Reveal>
+      <Reveal delayInView="0.5">
+        <h3 className="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
+          Here's where I've been
+        </h3>
+      </Reveal>
       <div className="relative mx-auto mt-12 flex w-full flex-col lg:w-2/3">
         <span className="left-2/5 absolute inset-y-0 ml-10 hidden w-0.5 bg-grey-40 md:block"></span>
 
         {workExperience.map((experience, index) => (
+          <Reveal delayInView={experience.delay}>
           <div key={index} className="mt-8 flex flex-col text-center md:flex-row md:text-left transition-all will-change-transform">
             <div className="md:w-2/5">
               <div className="flex justify-center md:justify-start">
@@ -69,6 +74,7 @@ const Experience = () => {
               </div>
             </div>
           </div> 
+          </Reveal>
         ))}
       </div>
     </div>
