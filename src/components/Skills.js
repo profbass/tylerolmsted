@@ -6,9 +6,9 @@ import CountUp from 'react-countup';
 const Skills = () => {
     const data = useMemo(() => [
         { label: 'JS / React / Next.JS', percentage: 90 },
-        { label: 'iOS', percentage: 75 },
-        { label: 'Android', percentage: 65 },
-        { label: 'Python', percentage: 80 },
+        { label: 'Native Mobile', percentage: 75 },
+        { label: 'Python', percentage: 70 },
+        { label: 'PHP / Laravel', percentage: 80 },
         { label: 'AWS', percentage: 95 },
     ], []);
 
