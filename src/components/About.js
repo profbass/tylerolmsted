@@ -6,13 +6,13 @@ const About = () => {
 
   return (
     <div id="about" className="container">
-      <div className="flex py-20">
-        <div className="w-2/3 pr-10">
-          <Reveal>
-            <h2 className="font-header2 font-semibold uppercase text-4xl text-primary sm:text-5xl lg:text-6xl">
-              Who am I?
-            </h2>
-          </Reveal>
+      <div className="flex flex-wrap w-full">
+        <div className="md:w-2/3">
+        <Reveal>
+          <h2 className="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl xs:text-3xl lg:text-6xl">
+          Who am I?
+          </h2>
+        </Reveal>
           <Reveal delayInView="0.25">
             <h4 className="pt-6 font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
               I'm Tyler Olmsted, and I love building great products!
@@ -30,7 +30,7 @@ const About = () => {
           </Reveal>
         </div>
         <motion.div 
-          className="w-1/3"
+          className="md:w-1/3 xs:w-full"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 2.5 }}

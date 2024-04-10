@@ -16,7 +16,7 @@ function Navigation() {
             opacity: 1,
             transition: {
                 staggerChildren: 0.1, // Stagger the animation of children
-                delayChildren: 0.75, // Delay the animation of children
+                delayChildren: 2.2, // Delay the animation of children
             },
         },
     };

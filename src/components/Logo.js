@@ -5,7 +5,7 @@ function Logo() {
         <AnimatePresence>
             <motion.div
                 initial={{ 
-                    y: -100,
+                    y: -200,
                     transition: {
                         duration: 0.5
                     }
@@ -15,11 +15,12 @@ function Logo() {
                     transition: {
                         duration: 1,
                         bounce: 0.4,
-                        type: "spring"
+                        type: "spring",
+                        delay: 3
                     } 
                 }}
                 exit={{ 
-                    y: -100 
+                    y: -200 
                 }}
                 whileHover={{ scale: 1.1 }}
             >
