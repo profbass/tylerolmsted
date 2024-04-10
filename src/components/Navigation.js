@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const menuItems = [
     { name: 'Home', href: 'home', id: 1 },
     { name: 'About', href: 'about', id: 2 },
-    { name: 'Services', href: 'services', id: 3 },
+    { name: 'Work', href: 'work', id: 3 },
     { name: 'Contact', href: 'contact', id: 4 },
 ];
 
@@ -23,9 +23,9 @@ function Navigation() {
 
     // Animation variants for each item
     const itemVariants = {
-        hidden: { y: -50, opacity: 0 }, // Start above the original position
+        hidden: { x: -50, opacity: 0 }, // Start above the original position
         visible: {
-            y: 0,
+            x: 0,
             opacity: 1,
             transition: {
                 type: 'spring',
@@ -41,25 +41,29 @@ function Navigation() {
     };
 
     return (
-        <motion.ul
-            className="hidden sm:flex items-center space-x-8 navigation"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
+        <div 
+            className="fixed top-0 right-0 z-20 bg-black bg-opacity-50 p-4 overflow-hidden"
         >
-            {menuItems.map((item) => (
-                <motion.li key={item.id} variants={itemVariants}>
-                    <Link
-                        to={item.href}
-                        smooth={true}
-                        duration={500}
-                        className="font-body text-lg uppercase text-white cursor-pointer hover:text-yellow transition-all duration-300"
-                    >
-                        {item.name}
-                    </Link>
-                </motion.li>
-            ))}
-        </motion.ul>
+            <motion.ul
+                className=""
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+            >
+                {menuItems.map((item) => (
+                    <motion.li key={item.id} variants={itemVariants}>
+                        <Link
+                            to={item.href}
+                            smooth={true}
+                            duration={500}
+                            className="font-body text-sm uppercase text-white cursor-pointer hover:text-yellow transition-all duration-300"
+                        >
+                            {item.name}
+                        </Link>
+                    </motion.li>
+                ))}
+            </motion.ul>
+        </div>
     );
 }
 
