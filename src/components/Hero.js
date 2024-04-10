@@ -87,7 +87,7 @@ const Hero = () => {
                 autoPlay
                 muted
                 loop
-                src={`${process.env.PUBLIC_URL}/img/waves.mp4`}
+                src={"https://tylerco-assets.s3.us-east-2.amazonaws.com/waves.mp4"}
             />
         </div>
     );
