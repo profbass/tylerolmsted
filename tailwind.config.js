@@ -45,6 +45,8 @@ module.exports = {
       yellow: "#f5af02",
       lila: "#e6e5ec",
       coral:"#f37d58",
+      copy: "#303030",
+      paper: "#fdf9e9",
       "grey-10": "#6c6b6d",
       "grey-20": "#7c7c7c",
       "grey-30": "#919091",
@@ -134,6 +136,10 @@ module.exports = {
         '40vw': '40vw',
         '50vw': '50vw',
       },
+      textIndent: {
+        '1': '0.25rem',
+        '2': '0.5rem',
+      },
       height: {
         '50':  '50vh',
         '75':  '75vh',
@@ -141,7 +147,7 @@ module.exports = {
         '150': '150vh',
         '200': '200vh',
         '300': '300vh',
-      }
+      },
     },
   },
   plugins: [

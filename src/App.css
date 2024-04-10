@@ -3,3 +3,6 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wdth,YTLC@0,6..12,75..125,440..540;1,6..12,75..125,440..540&display=swap');
 
+code {
+  font-family:'Courier New', Courier, monospace;
+}

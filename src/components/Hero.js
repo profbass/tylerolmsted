@@ -26,7 +26,7 @@ const Hero = () => {
                     <div className="flex flex-col lg:pl-20">
                         
                             <p 
-                                className="text-white font-body lg:text-vw-sm sm:text-vw-md pb-10vw leading-extra-loose"
+                                className="text-white font-body lg:text-vw-sm sm:text-vw-md pb-5vw leading-extra-loose"
                             >
                                 <Reveal delayInView="2.5" yValue={20}>Pioneering Next-Gen SaaS Solutions <br /></Reveal>
                                 <Reveal delayInView="2.7" yValue={20}>with Global Impact Through Visionary<br /></Reveal>
@@ -48,8 +48,8 @@ const Hero = () => {
                                 <p
                                     className="text-white font-body lg:text-vw-sm sm:text-vw-md pt-10vw leading-extra-loose"
                                 >
-                                    My vision is empowering teams by <br /> 
-                                    integratingcross-functional insights <br />
+                                    My vision is to empower teams by <br /> 
+                                    integrating cross-functional insights <br />
                                     to ensure we build resilient solutions<br />
                                     that deliver compelling value.
                                 </p>
@@ -76,13 +76,18 @@ const Hero = () => {
                     y: backgroundY,
                 }}
             />
-            <div
+            <video
                 className="absolute inset-0 z-10"
                 style={{
-                    backgroundImage: `linear-gradient(rgba(30, 81, 106, 0.75), rgba(30, 81, 106, 0.75)), url(${process.env.PUBLIC_URL}/img/bg-beach-sunset-2.jpg)`,
-                    backgroundPosition: "bottom",
-                    backgroundSize: "cover",
+                    objectPosition: "bottom",
+                    objectFit: "cover",
+                    width: "100%",
+                    height: "100%"
                 }}
+                autoPlay
+                muted
+                loop
+                src={`${process.env.PUBLIC_URL}/img/waves.mp4`}
             />
         </div>
     );

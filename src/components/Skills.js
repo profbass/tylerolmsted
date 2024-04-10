@@ -5,11 +5,11 @@ import CountUp from 'react-countup';
 
 const Skills = () => {
     const data = useMemo(() => [
-        { label: 'JS / React / Next.JS', percentage: 90 },
-        { label: 'Native Mobile', percentage: 75 },
-        { label: 'Python', percentage: 70 },
-        { label: 'PHP / Laravel', percentage: 80 },
-        { label: 'AWS', percentage: 95 },
+        { label: 'Technical Direction', percentage: 100 },
+        { label: 'Product Development', percentage: 100 },
+        { label: 'Lean Startup Strategy', percentage: 100 },
+        { label: 'Consumer-Focused Innovation', percentage: 100 },
+        { label: 'Adaptive Agile', percentage: 100 },
     ], []);
 
     return (
