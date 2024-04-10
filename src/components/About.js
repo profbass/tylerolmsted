@@ -6,10 +6,10 @@ const About = () => {
 
   return (
     <div id="about" className="container">
-      <div className="flex flex-wrap w-full">
+      <div className="flex flex-wrap w-full pace-x-0.5 pt-20">
         <div className="md:w-2/3">
         <Reveal>
-          <h2 className="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl xs:text-3xl lg:text-6xl">
+          <h2 className="text-left font-header text-4xl font-semibold uppercase text-primary sm:text-5xl xs:text-6xl lg:text-6xl">
           Who am I?
           </h2>
         </Reveal>

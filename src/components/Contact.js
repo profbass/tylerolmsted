@@ -58,7 +58,7 @@ const Contact = () => {
   return (
     <div className="container py-16 md:py-20" id="contact">
       <Reveal>
-        <h2 className="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
+        <h2 className="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl xs:text-6xl">
           Drop me a line
         </h2>
       </Reveal>
