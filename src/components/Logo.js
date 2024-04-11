@@ -1,6 +1,10 @@
+import React, { useContext } from 'react'; // Import useContext
 import { motion, AnimatePresence } from "framer-motion";
+import { LoadingContext } from '../utils/LoadingContext'; // Adjust the path according to your project structure
 
 function Logo() {
+    const { loadingComplete } = useContext(LoadingContext); // Use the context
+
     return (
         <div className="fixed top-0 left-0 z-50 p-4">
             <AnimatePresence>
@@ -12,12 +16,11 @@ function Logo() {
                         }
                     }}
                     animate={{ 
-                        y: 0,
+                        y: loadingComplete ? 0 : -200, // Use loadingComplete to control the animation
                         transition: {
                             duration: 1,
                             bounce: 0.4,
                             type: "spring",
-                            delay: 3
                         } 
                     }}
                     exit={{ 

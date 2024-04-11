@@ -1,6 +1,7 @@
-import  React, { useEffect } from 'react'
+import  React, { useEffect, useContext } from 'react'
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import { LoadingContext } from './LoadingContext'
 
 export default function Reveal({children, delayInView="0", durationInView="2", yValue=50}) {
     const [ref, inView] = useInView({
@@ -9,12 +10,13 @@ export default function Reveal({children, delayInView="0", durationInView="2", y
     })
 
     const mainControls = useAnimation()
+    const { loadingComplete } = useContext(LoadingContext)
 
     useEffect(() => {
-        if (inView) {
+        if (inView && loadingComplete) {
             mainControls.start("visible")
         }
-    }, [inView, mainControls])
+    }, [inView, mainControls, loadingComplete])
 
     return(
         <div 

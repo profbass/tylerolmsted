@@ -1,4 +1,6 @@
+import React, { useState } from 'react';
 import './App.css';
+import { LoadingContext } from './utils/LoadingContext'; // Import the context
 import Logo from './components/Logo';
 import Navigation from './components/Navigation';
 import PageLoader from './utils/PageLoader';
@@ -12,19 +14,23 @@ import Footer from './components/Footer';
 import Work from './components/Work';
 
 export default function App() {
+  const [loadingComplete, setLoadingComplete] = useState(false); // Manage the state here
+
   return (
-    <div className="bg-paper">
-      <PageLoader />
-      <Logo />
-      <Navigation />
-      <Hero />
-      <TextScrolling />
-      <About />
-      <MyMission />
-      <Work />
-      <Contact />
-      <Subscribe />
-      <Footer />
-    </div>
+    <LoadingContext.Provider value={{ loadingComplete, setLoadingComplete }}> {/* Provide the context */}
+      <div className="bg-paper">
+        <PageLoader />
+        <Logo />
+        <Navigation />
+        <Hero />
+        <TextScrolling />
+        <About />
+        <MyMission />
+        <Work />
+        <Contact />
+        <Subscribe />
+        <Footer />
+      </div>
+    </LoadingContext.Provider>
   );
 }
