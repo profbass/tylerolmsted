@@ -13,16 +13,16 @@ export default function MyMission() {
 
     return (
         <Reveal>
-            <div className="container my-60 px-5 relative">
-                <span className="absolute top-5 inline-block text-secondary font-bold px-5 text-base py-2 underline">
+            <div className="container xs:my-32 lg:my-60  px-5 relative">
+                <span className="absolute lg:top-3 md:top-0 inline-block text-secondary font-bold px-5 text-base py-2 underline">
                     MY MISSION
                 </span>
                 <motion.h2 
-                    className="text-indent-2 text-vw-base text-primary font-header2 leading-loose inline-block"
-                    style={{ textIndent: '10rem' }}
+                    className="text-indent-2 lg:text-vw-base xs:text-3xl text-primary font-header2 leading-loose inline-block"
+                    style={{ textIndent: '9rem' }}
                     whileHover="hover" // Trigger hover state
                 >
-                    Craft, <code className="text-yellow">code</code>, and ship 🚀. Synthesizing agile frameworks with strategic vision and cutting-edge technology
+                    Craft, <code className="text-green">code</code>, and ship 🚀. Synthesizing agile frameworks with strategic vision and cutting-edge technology
                     <motion.span className="inline-block mx-3 overflow-hidden" variants={svgVariants} initial="initial" whileHover="hover">
                         <svg width="84" height="22" viewBox="0 0 84 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M0 11H83M83 11L72.5 0.5M83 11L72.5 21.5" stroke="currentColor"></path>

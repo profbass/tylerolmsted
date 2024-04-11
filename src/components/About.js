@@ -8,7 +8,7 @@ const About = () => {
   return (
     <section id="about">
       <div className="container mx-auto">
-        <div className="flex flex-wrap w-full pace-x-0.5 pt-20">
+        <div className="flex flex-wrap w-full pace-x-0.5 pt-20 xs:pt-0">
           <div className="md:w-2/3 lg:pr-36 md:pr-10">
             <div className="flex">
               <div className="pr-5"><Avatar /></div>
