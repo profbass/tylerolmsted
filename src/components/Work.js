@@ -27,7 +27,7 @@ export default function Work() {
                         tech="VueJS, Laravel, Swift, Kotlin, GraphQL, AWS"
                     />
                     <WorkBlock 
-                        title="My Open Door" 
+                        title="MyOpenDoor" 
                         description="Open House contact management app for iOS"
                         tech="Swift, AWS"
                     />
