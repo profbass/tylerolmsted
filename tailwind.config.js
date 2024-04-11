@@ -47,6 +47,8 @@ module.exports = {
       coral:"#f37d58",
       copy: "#303030",
       paper: "#fdf9e9",
+      sand: "#e0ccbb",
+      "off-black": "#303030",
       "grey-10": "#6c6b6d",
       "grey-20": "#7c7c7c",
       "grey-30": "#919091",

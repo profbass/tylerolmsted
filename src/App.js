@@ -9,6 +9,7 @@ import MyMission from './components/MyMission';
 import Contact from './components/Contact';
 import Subscribe from './components/Subscribe';
 import Footer from './components/Footer';
+import Work from './components/Work';
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
       <TextScrolling />
       <About />
       <MyMission />
+      <Work />
       <Contact />
       <Subscribe />
       <Footer />

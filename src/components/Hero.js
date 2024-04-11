@@ -23,7 +23,7 @@ const Hero = () => {
             >
                 <div className="container mx-auto h-full">
                     
-                    <div className="flex flex-col lg:pl-20">
+                    <div className="flex flex-wrap lg:pl-20">
                         
                             <p 
                                 className="text-white font-body lg:text-vw-sm sm:text-vw-md pb-5vw leading-extra-loose"
@@ -36,7 +36,7 @@ const Hero = () => {
                             <h1 className="text-white font-header2 text-vw-xl leading-tight">
                                 <Reveal delayInView="3">Inspired<br /></Reveal>
                                 <Reveal delayInView="3.2">Digital<br /></Reveal>
-                                <Reveal>Experiences.</Reveal>
+                                <Reveal delayInView="3.4">Experiences.</Reveal>
                             </h1>
                         
                     </div>
@@ -56,7 +56,7 @@ const Hero = () => {
                             </Reveal>
                         </div>
                         <div
-                            className="flex w-1/3 text-white font-body lg:text-vw-xs sm:text-vw-sm pt-10vw leading-extra-loose"
+                            className="flex w-1/3 text-white font-body  lg:text-vw-xs sm:text-vw-sm pt-10vw leading-extra-loose"
                         >   
                             <Reveal delayInView="1.2">
                                 <div className="grid grid-cols-2 gap-1">
