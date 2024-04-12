@@ -9,9 +9,10 @@ import About from './components/About';
 import TextScrolling from './components/TextScrolling';
 import MyMission from './components/MyMission';
 import Contact from './components/Contact';
-import Subscribe from './components/Subscribe';
+// import Subscribe from './components/Subscribe';
 import Footer from './components/Footer';
 import Work from './components/Work';
+import Experience from './components/Experience';
 
 export default function App() {
   const [loadingComplete, setLoadingComplete] = useState(false); // Manage the state here
@@ -27,8 +28,9 @@ export default function App() {
         <About />
         <MyMission />
         <Work />
+        <Experience />
         <Contact />
-        <Subscribe />
+        {/* <Subscribe /> */}
         <Footer />
       </div>
     </LoadingContext.Provider>

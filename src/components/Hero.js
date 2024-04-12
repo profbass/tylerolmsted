@@ -35,9 +35,9 @@ const Hero = () => {
                                 </p>
                             
                                 <h1 className="text-white font-header2 text-vw-xl leading-tight">
-                                    <Reveal delayInView="2">Inspired<br /></Reveal>
-                                    <Reveal delayInView="2.2">Digital<br /></Reveal>
-                                    <Reveal delayInView="2.4">Experiences.</Reveal>
+                                    <Reveal delayInView="0.25">Inspired<br /></Reveal>
+                                    <Reveal delayInView="0.75">Digital<br /></Reveal>
+                                    <Reveal delayInView="1.2">Experiences.</Reveal>
                                 </h1>
                             
                         </div>

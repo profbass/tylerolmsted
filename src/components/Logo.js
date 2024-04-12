@@ -21,6 +21,7 @@ function Logo() {
                             duration: 1,
                             bounce: 0.4,
                             type: "spring",
+                            delay: 0.5,
                         } 
                     }}
                     exit={{ 

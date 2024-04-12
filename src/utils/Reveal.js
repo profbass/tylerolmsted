@@ -27,12 +27,12 @@ export default function Reveal({children, delayInView="0", durationInView="2", y
                 variants={{
                     hidden: { 
                         opacity: 0, 
-                        rotateY: 20,
+                        rotate: 3,
                         y: yValue
                     },
                     visible: { 
                         opacity: 1, 
-                        rotateY: 0,
+                        rotate: 0,
                         y: 0
                     },
                 }}

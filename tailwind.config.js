@@ -27,7 +27,7 @@ module.exports = {
       'vw-xs': '1vw',     // 2% of viewport width
       'vw-sm': '1.8vw',     // 3% of viewport width
       'vw-base': '4vw',   // 4% of viewport width
-      'vw-lg': '5vw',     // 5% of viewport width
+      'vw-lg': '10vw',     // 5% of viewport width
       'vw-xl': '15vw',     // 6% of viewport width
     },
 

@@ -1,7 +1,7 @@
 import { motion, useAnimation } from 'framer-motion';
 import Reveal from '../utils/Reveal';
 
-const WorkBlock = ({ title, description, tech, image }) => {
+const WorkBlock = ({ title, description, tech, media }) => {
     const controls = useAnimation();
     
     const workBlockVariants = {
@@ -39,8 +39,9 @@ const WorkBlock = ({ title, description, tech, image }) => {
 
     const iconVariants = {
         hidden: {
-            color: "#303030",
+            color: "#919091",
             rotate: -45, 
+            scale: 1,
             top: 0,
             right: 0,
             transition: {
@@ -48,10 +49,11 @@ const WorkBlock = ({ title, description, tech, image }) => {
             }
         },
         visible: {
-            color: "#fff",
+            color: "rgba(255,255,255, 0.2)",
             rotate: 135, 
-            top: 30,
-            right: 30,
+            scale: 3,
+            top: 10,
+            right: 10,
             transition: {
                 duration: 0.25,
             }
@@ -61,6 +63,8 @@ const WorkBlock = ({ title, description, tech, image }) => {
     const headerVarient = {
         hidden: {
             color: "#303030",
+            y: 0,
+            fontSize: "1.25rem",
             transition: {
                 type: 'spring',
                 duration: 1,
@@ -69,6 +73,8 @@ const WorkBlock = ({ title, description, tech, image }) => {
         },
         visible: {
             opacity: 1,
+            y: "-20px",
+            fontSize: "1rem",
             color: "#ff775e",
             transition: {
                 type: 'spring',
@@ -81,6 +87,7 @@ const WorkBlock = ({ title, description, tech, image }) => {
     const bodyTextVariants = {
         hidden: {
             color: "#303030",
+            y: 0,
             transition: {
                 type: 'spring',
                 duration: 0.5,
@@ -89,6 +96,7 @@ const WorkBlock = ({ title, description, tech, image }) => {
         },
         visible: {
             color: "#fff",
+            y:"-30px",
             transition: {
                 type: 'spring',
                 duration: 0.5,
@@ -124,14 +132,30 @@ const WorkBlock = ({ title, description, tech, image }) => {
             onClick={() => controls.start('visible')}
             variants={workBlockVariants}
         >
-            <motion.div 
+            {/* <motion.div 
                 className="absolute inset-0 z-0"
                 variants={imageVariants}
                 style={{
-                    backgroundPosition: "center",
-                    backgroundSize: "cover",
-                    backgroundImage: `linear-gradient(rgba(30, 81, 106, 0.75), rgba(30, 81, 106, 0.75)), url(${image ? image : "/img/bg-beach-sunset.jpg"})`
+                    objectPosition: "bottom",
+                    objectFit: "cover",
+                    width: "100%",
+                    height: "100%"
                 }}
+            /> */}
+
+            <motion.video
+                className="absolute inset-0 z-10"
+                variants={imageVariants}
+                style={{
+                    objectPosition: "bottom",
+                    objectFit: "cover",
+                    width: "100%",
+                    height: "100%"
+                }}
+                autoPlay
+                muted
+                loop
+                src={media ? media : "https://tylerco-assets.s3.us-east-2.amazonaws.com/waves.mp4"}
             />
             <motion.i 
                 className="bx bx-right-arrow-alt text-4xl absolute top-0 right-0 -rotate-45 z-10" 
@@ -147,8 +171,8 @@ const WorkBlock = ({ title, description, tech, image }) => {
 export default function Work() {
     return (
         <section id="work">
-            <div className="bg-off-black py-36 xs:py-20 text-sand">
-                <div className="container mx-auto lg:my-10 xs:my-0">
+            <div className="overflow-hidden bg-off-black py-36 xs:py-20 text-sand">
+                <div className="container mx-auto lg:my-10 xs:my-0 z-20">
                     <div className="flex xs:flex-wrap lg:px-20 xs:px-0 mb-10">
                         <div className="">
                             <Reveal yValue={20}>
@@ -177,6 +201,7 @@ export default function Work() {
                                 title="Backflip Mobile" 
                                 description="Real Estate Investing made simple mobile apps for iOS and Android"
                                 tech="React, SwiftUI, Kotlin, Django, GraphQL, AWS"
+                                media="https://tylerco-assets.s3.us-east-2.amazonaws.com/clouds.mp4"
                             />
                         </Reveal>
                         <Reveal delayInView="1">
@@ -184,6 +209,7 @@ export default function Work() {
                                 title="RE/MAX" 
                                 description="A comprehensive ground up custom real estate platform, from web to mobile. We built a suite of tools for agents, brokers, and consumers."
                                 tech="VueJS, React Native, Swift, Kotlin, Laravel, GraphQL, AWS"
+                                media="https://tylerco-assets.s3.us-east-2.amazonaws.com/color-lines.mp4"
                             />
                         </Reveal>
                         <Reveal delayInView="1.25">
@@ -191,6 +217,7 @@ export default function Work() {
                                 title="MyOpenDoor" 
                                 description="Open House contact management app for iOS"
                                 tech="Swift, PHP, AWS"
+                                media="https://tylerco-assets.s3.us-east-2.amazonaws.com/stars.mp4"
                             />
                         </Reveal>
                         <Reveal delayInView="1.5">

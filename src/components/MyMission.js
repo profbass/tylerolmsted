@@ -22,14 +22,14 @@ export default function MyMission() {
                     style={{ textIndent: '9rem' }}
                     whileHover="hover" // Trigger hover state
                 >
-                    Craft, <code className="text-green">code</code>, and ship 🚀. Synthesizing agile frameworks with strategic vision and cutting-edge technology
+                    Craft, <code className="text-green">code</code>, and ship 🚀. Leveraging a lean mindset 🧠 with vision and cutting-edge technology
                     <motion.span className="inline-block mx-3 overflow-hidden" variants={svgVariants} initial="initial" whileHover="hover">
                         <svg width="84" height="22" viewBox="0 0 84 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M0 11H83M83 11L72.5 0.5M83 11L72.5 21.5" stroke="currentColor"></path>
                             <path d="M0 11H83M83 11L72.5 0.5M83 11L72.5 21.5" stroke="currentColor"></path>
                         </svg>
                     </motion.span>
-                    oh, and building <em>stellar</em> teams.
+                    oh, and building <em>stellar</em> 🧑‍🚀 teams.
                 </motion.h2>
             </div>
         </Reveal>

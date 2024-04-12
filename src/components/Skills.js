@@ -1,16 +1,24 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useContext, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import CountUp from 'react-countup';
-
+import { LoadingContext } from '../utils/LoadingContext';
 const Skills = () => {
     const data = useMemo(() => [
         { label: 'Technical Direction', percentage: 100 },
-        { label: 'Product Development', percentage: 100 },
+        { label: ' Product Development', percentage: 100 },
         { label: 'Lean Startup Strategy', percentage: 100 },
         { label: 'Consumer-Focused Innovation', percentage: 100 },
         { label: 'Adaptive Agile', percentage: 100 },
     ], []);
+
+    const { loadingComplete } = useContext(LoadingContext)
+
+    // useEffect(() => {
+    //     if (inView && loadingComplete) {
+    //         mainControls.start("visible")
+    //     }
+    // }, [inView, mainControls, loadingComplete])
 
     return (
         <div className="w-full pl-0 pt-10">
