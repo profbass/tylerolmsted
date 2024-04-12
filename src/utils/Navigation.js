@@ -7,7 +7,7 @@ const menuItems = [
     { name: 'Work', href: 'work', id: 3 },
     { name: 'Contact', href: 'contact', id: 4 },
 ];
-
+// TODO: Add a hover effect to the navigation items
 function Navigation() {
     // Animation variants for the container
     const containerVariants = {

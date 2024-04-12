@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'; // Import useContext
 import { motion, AnimatePresence } from "framer-motion";
-import { LoadingContext } from '../utils/LoadingContext'; // Adjust the path according to your project structure
+import { LoadingContext } from './LoadingContext'; // Adjust the path according to your project structure
 
 function Logo() {
     const { loadingComplete } = useContext(LoadingContext); // Use the context

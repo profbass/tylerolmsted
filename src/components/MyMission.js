@@ -2,14 +2,14 @@ import { motion } from 'framer-motion';
 import Reveal from "../utils/Reveal";
 
 export default function MyMission() {
-    // Define animation variants for the SVG
+   
     const svgVariants = {
         initial: { x: 0 },
         hover: {
-            x: [0, 300, -300, 0], // Move right, then offscreen to the left, then back to start
-            transition: { duration: 2 } // Adjust timing here
+            x: [0, 300, -300, 0],
+            transition: { duration: 2 }
         }
-    };
+    }
 
     return (
         <Reveal>
@@ -33,5 +33,5 @@ export default function MyMission() {
                 </motion.h2>
             </div>
         </Reveal>
-    );
+    )
 }

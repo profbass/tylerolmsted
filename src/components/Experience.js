@@ -112,19 +112,21 @@ const workBlockVariants = {
 
   return (
     <section id="experience" className="mb-100 mt-60">
-      <Reveal yValue={20}>
-        <div className="text-base">
-          <span className="text-primary pr-8 mr-2 inline-block border-b-4 border-b-secondary"></span>
-          <span className="text-off-black inline-block font-semibold">Here' what I've been up to</span>
+      <div className="container">
+        <Reveal yValue={20}>
+          <div className="text-base">
+            <span className="text-primary pr-8 mr-2 inline-block border-b-4 border-b-secondary"></span>
+            <span className="text-off-black inline-block font-semibold">Here' what I've been up to</span>
+          </div>
+          <h1 className="lg:text-vw-xl xs:text-8xl font-semibold leading-extra-tight">Experience</h1>
+        </Reveal>
+        <div className="flex flex-wrap w-full border-t-2 border-copy px-5 mt-20">
+          {workExperience.map((item, index) => (
+            <Reveal key={index} delayInView={item.delay}>
+                <ExperienceBlock item={item} />
+            </Reveal>
+          ))}
         </div>
-        <h1 className="lg:text-vw-xl xs:text-8xl font-semibold leading-extra-tight">Experience</h1>
-      </Reveal>
-      <div className="flex flex-wrap w-full border-t-2 border-copy px-5 mt-20">
-        {workExperience.map((item, index) => (
-          <Reveal key={index} delayInView={item.delay}>
-              <ExperienceBlock item={item} />
-          </Reveal>
-        ))}
       </div>
     </section>
   )

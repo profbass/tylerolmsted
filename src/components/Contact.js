@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Button from './Button';
+import Button from '../utils/Button';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Flip } from 'react-toastify';
@@ -8,13 +8,13 @@ import { motion, useViewportScroll, useTransform } from 'framer-motion'
 
 
 const Contact = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
   
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
+    event.preventDefault()
     
     const notify = (e) => toast(e, {
       position: "bottom-center",
@@ -27,13 +27,13 @@ const Contact = () => {
       progress: undefined,
       theme: "colored",
       transition: Flip,
-    });
+    })
   
     const formData = {
       name,
       email,
       message
-    };
+    }
   
     const response = await fetch('https://m3pcqudze9.execute-api.us-east-2.amazonaws.com/production/submitContactForm', {
       method: 'POST',
@@ -41,7 +41,7 @@ const Contact = () => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(formData),
-    });
+    })
   
     if (!response.ok) {
       notify("Uh oh, something went wrong. Please try again.");
@@ -56,13 +56,13 @@ const Contact = () => {
     const responseBody = await response.text();
     console.log(responseBody); // Handle success
     
-  };
+  }
 
   const { scrollYProgress } = useViewportScroll(); 
-  const yRange = useTransform(scrollYProgress, [0, 1], ['-100px', '100px']);
+  const yRange = useTransform(scrollYProgress, [0, 1], ['-100px', '100px'])
 
   return (
-    <section id="contact" className="mb-100 mt-60">
+    <section id="contact" className="mt-60">
       <Reveal yValue={20}>
           <div className="text-base">
               <span className="text-primary pr-8 mr-2 inline-block border-b-4 border-b-secondary"></span>

@@ -125,7 +125,7 @@ const WorkBlock = ({ title, description, tech, media }) => {
     }
 
     return (
-        <motion.div className="bg-paper relative p-8 min-h-100 overflow-hidden hover:cusor-pointer xs:mb-5"
+        <motion.div className="bg-paper relative p-8 min-h-96 overflow-hidden hover:cusor-pointer xs:mb-5"
             whileHover="visible"
             initial="hidden"
             animate={controls}
@@ -167,7 +167,7 @@ const WorkBlock = ({ title, description, tech, media }) => {
         </motion.div>
     )
 }
-
+// TODO: Get actual media for each project
 export default function Work() {
     return (
         <section id="work">
@@ -195,7 +195,7 @@ export default function Work() {
                             </Reveal>
                         </div>
                     </div>
-                    <div className="grid lg:grid-cols-3 xs:grid-cols-1 w-full gap-4">
+                    <div className="grid lg:grid-cols-2 xs:grid-cols-1 w-full gap-4">
                         <Reveal delayInView="0.75">
                             <WorkBlock 
                                 title="Backflip Mobile" 
@@ -225,6 +225,7 @@ export default function Work() {
                                 title="ENCON" 
                                 description="Conference and event management platform for iOS"
                                 tech="Swift, PHP, AWS"
+                                media="https://tylerco-assets.s3.us-east-2.amazonaws.com/coding.mp4"
                             />
                         </Reveal>
                         <Reveal delayInView="1.75">

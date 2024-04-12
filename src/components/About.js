@@ -1,6 +1,8 @@
 import Skills from "./Skills";
 import Reveal from "../utils/Reveal";
-import Avatar from "./Avatar";
+import Avatar from "../utils/Avatar";
+import SocialLinks from "../utils/SocialLinks";
+import Button from "../utils/Button";
 import { motion } from "framer-motion";
 
 const About = () => {
@@ -28,6 +30,22 @@ const About = () => {
               <h4 className="pt-6 font-header text-xl text-copy font-medium sm:text-2xl lg:text-3xl">
                 I'm <span className="font-bold text-primary underline">Tyler</span>, and I <span className="text-secondary font-semibold">love</span> building inspired products!
               </h4>
+            </Reveal>
+            <Reveal delayInView="0.5">
+              <p className="pt-6 text-xl font-body leading-relaxed text-copy uppercase">
+                Let's Connect
+                <SocialLinks
+                  className="ml-2"
+                /> 
+                <Button 
+                  text="My Resume" 
+                  link="https://tylerco-assets.s3.us-east-2.amazonaws.com/Tyler-Olmsted-Resume.pdf"
+                  isNewTab={true}
+                  size="xs"
+                  color="secondary"
+                  buttonClass="ml-5"
+                />
+              </p>
             </Reveal>
             <Reveal delayInView="0.5">
               <p className="pt-6 text-xl font-body leading-relaxed text-copy">
