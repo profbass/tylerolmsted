@@ -9,7 +9,7 @@ const Footer = () => {
                     <div className="container">
                         <div className="grid grid-cols-3 w-full text-sm text-white">
                             <div className="text-grey-40 relative pt-10">
-                                <p className="uppercase">
+                                <p className="">
                                     Made with ❤️ in Denver, CO<br />
                                     {/* by <span className="text-yellow font-bold">Tyler Olmsted</span> */}
                                 </p>

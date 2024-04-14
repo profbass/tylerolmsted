@@ -13,7 +13,16 @@ import Contact from './components/Contact';
 import Footer from './utils/Footer';
 import Work from './components/Work';
 // import Experience from './components/Experience';
+import ScrollingTagline from './components/ScrollingTagline';
 
+// TODO:Contact page scroll effect cleanup
+// TODO: Work page videos
+// TODO: add a new text loading animation component
+// TODO: Mobile view audit
+// TODO: Figout out what to do with the spoace the work and contact section
+// TODO: Link Resume
+// TODO: Logo anitmation cleanup
+// TODO: Text scroll cleanup
 export default function App() {
   const [loadingComplete, setLoadingComplete] = useState(false); // Manage the state here
 
@@ -29,6 +38,7 @@ export default function App() {
         <MyMission />
         <Work />
         {/* <Experience /> */}
+        <ScrollingTagline />
         <Contact />
         {/* <Subscribe /> */}
       </div>

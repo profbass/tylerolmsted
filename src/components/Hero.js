@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion"
 import React, { useRef } from "react"
 import Reveal from "../utils/Reveal"
+import SocialLinks from "../utils/SocialLinks";
 
 
 const Hero = () => {
@@ -43,7 +44,7 @@ const Hero = () => {
                         </div>
                         <div className="flex lg:flex-nowrap xs:flex-wrap w-full">
                             <div
-                                className="flex lg:w-2/3 xs:w-full"
+                                className="flex lg:w-3/5 xs:w-full"
                             >
                                 <Reveal delayInView="1">
                                     <p
@@ -57,14 +58,23 @@ const Hero = () => {
                                 </Reveal>
                             </div>
                             <div
-                                className="flex lg:w-1/3 xs:w-full text-white font-body lg:text-vw-sm sm:text-vw-sm pt-10vw leading-extra-loose"
+                                className="flex lg:w-2/5 xs:w-full text-white font-body lg:text-vw-xs sm:text-vw-sm pt-20vw leading-extra-loose"
                             >   
-                                <Reveal delayInView="1.2" yValue={20}>
-                                    <div className="grid grid-cols-2 gap-1">
+                                <Reveal delayInView="1.2">
+                                    <div className="grid grid-cols-3 gap-1">
                                         <div className="text-right pr-5">Phone</div>
-                                        <div className="">+1 303 905 3904</div>
+                                        <div className="col-span-2">
+                                            <a href="tel:13039053904">+1 303 905 3904</a></div>
                                         <div className="text-right pr-5">Email</div>
-                                        <div className="">tylerdolmsted@gmail.com</div>
+                                        <div className="col-span-2">
+                                            <a href="mailto:tylerdolmsted@gmail.com">tylerdolmsted@gmail.com</a>
+                                        </div>
+                                        <div></div>
+                                        <div className="mt-3 col-span-2">
+                                            <SocialLinks
+                                                className="text-white text-3xl mr-5"
+                                            />
+                                        </div>
                                     </div>
                                 </Reveal>
                             </div>
