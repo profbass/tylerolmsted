@@ -33,10 +33,7 @@ const Footer = () => {
                                 <img 
                                     src="/img/logo-tyler-olmsted-yellow.svg" 
                                     alt="Tyler Dug Olm." 
-                                    className="max-w-64 float-end"
-                                    style={{
-                                        filter: grayscale("100%")
-                                    }}
+                                    className="max-w-64 float-end greyscale-100" 
                                 />
                             </div>
                         </div>
