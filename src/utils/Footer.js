@@ -34,6 +34,9 @@ const Footer = () => {
                                     src="/img/logo-tyler-olmsted-yellow.svg" 
                                     alt="Tyler Dug Olm." 
                                     className="max-w-64 float-end"
+                                    style={{
+                                        filter: grayscale("100%")
+                                    }}
                                 />
                             </div>
                         </div>

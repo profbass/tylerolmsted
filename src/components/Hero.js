@@ -35,7 +35,7 @@ const Hero = () => {
                                     <Reveal delayInView="0.9" yValue={20}>Engineering and Strategic Leadership</Reveal>
                                 </p>
                             
-                                <h1 className="text-white font-header2 text-vw-xl leading-tight">
+                                <h1 className="text-white font-header2 text-vw-xl leading-extra-tight overflow-visible">
                                     <Reveal delayInView="0.25">Inspired<br /></Reveal>
                                     <Reveal delayInView="0.75">Digital<br /></Reveal>
                                     <Reveal delayInView="1.2">Experiences.</Reveal>

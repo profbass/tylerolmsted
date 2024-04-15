@@ -20,7 +20,7 @@ export default function Reveal({children, delayInView="0", durationInView="2", y
 
     return(
         <div 
-            className='relative w-full overflow-hidden'
+            className='relative w-full overflow-visible'
         >
             <motion.div
                 ref={ref}
