@@ -8,7 +8,7 @@ export default function TextScrolling() {
     const xRightToLeft = useTransform(scrollYProgress, [0, 1], ['0%', '-80%']);
 
     return (
-        <div className="py-36 xs:py-20">
+        <div className="py-36 lg:py-60 xs:py-20">
             <div className="flex w-screen overflow-hidden">
                 <motion.h1
                     style={{ x: xLeftToRight }}

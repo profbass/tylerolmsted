@@ -7,9 +7,9 @@ import { LoadingContext } from '../utils/LoadingContext';
 const data = [
     { label: 'Product Vision', percentage: 100, key: 1 },
     { label: 'Iterative Development', percentage: 100, key: 2 },
-    { label: 'Lean Startup Strategy', percentage: 100, key: 3 },
+    { label: 'Startup Agility', percentage: 100, key: 3 },
     { label: 'Continuous Innovation', percentage: 100, key: 4 },
-    { label: 'Shipping Often', percentage: 100, key: 5 },
+    { label: 'Rapid Release Cycles', percentage: 100, key: 5 },
 ]
 
 const SkillBarItem = ({ item }) => {
@@ -29,7 +29,7 @@ const SkillBarItem = ({ item }) => {
     return (
         <div className="pt-6" ref={ref}>
             <div className="flex items-end justify-between">
-                <h4 className="font-header3 font-semibold text-off-black">{item.label}</h4>
+                <h4 className="font-2 font-semibold text-off-black uppercase font-bold">{item.label}</h4>
                 <h3 className="font-body text-3xl font-bold text-primary">
                     <CountUp end={inView ? item.percentage : 0} duration={2} />
                     %

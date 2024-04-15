@@ -1,7 +1,8 @@
 import { motion, useScroll, useTransform } from "framer-motion"
 import React, { useRef } from "react"
 import Reveal from "../utils/Reveal"
-import SocialLinks from "../utils/SocialLinks";
+import SocialLinks from "../utils/SocialLinks"
+import { Parallax, ParallaxProvider } from 'react-scroll-parallax'
 
 
 const Hero = () => {
@@ -15,15 +16,14 @@ const Hero = () => {
 
     return (
         <section id="home">
+            <ParallaxProvider>
             <div 
                 className="relative w-full overflow-hidden lg:h-200 md:h-150 sm: h-85"
-                ref={ref}
             >
-                <motion.div
-                    style={{ y: textY }}
-                    className="relative z-20"
-                >
-                    <div className="container mx-auto h-full xs:mt-10">
+                
+                <div className="relative z-20">
+                    <Parallax speed={-25}>
+                    <div className="container mx-auto h-full lg:mt-60 xs:mt-20">
                         
                         <div className="flex flex-wrap lg:pl-20">
                             
@@ -50,10 +50,11 @@ const Hero = () => {
                                     <p
                                         className="text-white font-body lg:text-vw-sm sm:text-vw-md pt-10vw leading-extra-loose"
                                     >
-                                        My vision is to empower teams by <br /> 
-                                        integrating cross-functional insights <br />
-                                        to ensure we build resilient solutions<br />
-                                        that deliver compelling value.
+                                        My vision is to build cutting-edge products<br /> 
+                                        by empowering teams to do their best work <br />
+                                        yet, through cross-functional insights to ensure<br /> 
+                                        we build resilient, enduring solutions that<br />
+                                        deliver compelling value
                                     </p>
                                 </Reveal>
                             </div>
@@ -80,13 +81,9 @@ const Hero = () => {
                             </div>
                         </div>
                     </div>
-                </motion.div>
-                <motion.div 
-                    className="absolute inset-0 z-0"
-                    style={{
-                        y: backgroundY,
-                    }}
-                />
+
+                </Parallax>
+                </div>
                 <video
                     className="absolute inset-0 z-10"
                     style={{
@@ -101,6 +98,8 @@ const Hero = () => {
                     src={"https://tylerco-assets.s3.us-east-2.amazonaws.com/waves.mp4"}
                 />
             </div>
+            
+            </ParallaxProvider>
         </section>
     );
 };

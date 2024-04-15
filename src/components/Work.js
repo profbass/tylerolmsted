@@ -64,7 +64,7 @@ const WorkBlock = ({ title, description, tech, media }) => {
         hidden: {
             color: "#303030",
             y: 0,
-            fontSize: "1.25rem",
+            fontSize: "1.7rem",
             transition: {
                 type: 'spring',
                 duration: 1,
@@ -74,7 +74,7 @@ const WorkBlock = ({ title, description, tech, media }) => {
         visible: {
             opacity: 1,
             y: "-20px",
-            fontSize: "1rem",
+            fontSize: "1.25rem",
             color: "#ff775e",
             transition: {
                 type: 'spring',
@@ -125,24 +125,17 @@ const WorkBlock = ({ title, description, tech, media }) => {
     }
 
     return (
-        <motion.div className="bg-paper relative p-8 min-h-96 overflow-hidden hover:cusor-pointer xs:mb-5"
+        <motion.div className="bg-paper relative p-8 min-h-120 overflow-hidden hover:cusor-pointer lg:mb-0 xs:mb-5"
             whileHover="visible"
             initial="hidden"
             animate={controls}
             onClick={() => controls.start('visible')}
             variants={workBlockVariants}
         >
-            {/* <motion.div 
-                className="absolute inset-0 z-0"
-                variants={imageVariants}
-                style={{
-                    objectPosition: "bottom",
-                    objectFit: "cover",
-                    width: "100%",
-                    height: "100%"
-                }}
-            /> */}
-
+            <motion.div 
+                className="absolute inset-0 z-20" 
+                variants={imageVariants} 
+                style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)' }}/>
             <motion.video
                 className="absolute inset-0 z-10"
                 variants={imageVariants}
@@ -158,12 +151,12 @@ const WorkBlock = ({ title, description, tech, media }) => {
                 src={media ? media : "https://tylerco-assets.s3.us-east-2.amazonaws.com/waves.mp4"}
             />
             <motion.i 
-                className="bx bx-right-arrow-alt text-4xl absolute top-0 right-0 -rotate-45 z-10" 
+                className="bx bx-right-arrow-alt text-4xl absolute top-0 right-0 -rotate-45 z-20" 
                 variants={iconVariants} 
             />
-            <motion.h2 className="relative text-vw-sm xs:text-4xl leading-tight font-semibold text-off-black z-10" variants={headerVarient}>{title}</motion.h2>
-            <motion.p className="relative text-xl text-off-black py-8 z-10" variants={bodyTextVariants}>{description}</motion.p>
-            <motion.p className="absolute bottom-3 left-8 text-body text-xs text-grey-40 z-10" variants={techTextVariants}>{tech}</motion.p>
+            <motion.h2 className="relative text-vw-sm xs:text-4xl leading-tight font-semibold text-off-black z-50" variants={headerVarient}>{title}</motion.h2>
+            <motion.p className="relative text-xl text-off-black py-8 z-50" variants={bodyTextVariants}>{description}</motion.p>
+            <motion.p className="absolute bottom-3 left-8 text-body text-xs text-grey-40 z-50" variants={techTextVariants}>built using: {tech}</motion.p>
         </motion.div>
     )
 }
@@ -199,49 +192,51 @@ export default function Work() {
                         <Reveal delayInView="0.75">
                             <WorkBlock 
                                 title="Backflip Mobile" 
-                                description="Real Estate Investing made simple mobile apps for iOS and Android"
+                                description="The Backflip mobile application revolutionizes real estate investing on iOS and Android by leveraging native mobile code for optimal performance and integrating machine learning to automate the identification and evaluation of potential deals. Backflip helps investors efficiently source potential home deals with tailored financial options, making complex investment decisions accessible and actionable at the touch of a button."
                                 tech="React, SwiftUI, Kotlin, Django, GraphQL, AWS"
-                                media="https://tylerco-assets.s3.us-east-2.amazonaws.com/clouds.mp4"
+                                media="https://tylerco-assets.s3.us-east-2.amazonaws.com/backflip.mp4"
                             />
                         </Reveal>
                         <Reveal delayInView="1">
                             <WorkBlock 
                                 title="RE/MAX" 
-                                description="A comprehensive ground up custom real estate platform, from web to mobile. We built a suite of tools for agents, brokers, and consumers."
+                                description="After being acquired by RE/MAX 2018, we developed a proprietary real estate platform powered by booj from the ground up. The RE/MAX product stack included a custom suite of tools designed specifically for agents, brokers, and consumers, enhancing the property buying and selling process, from consumer mobile searcn tools, to agent and brokerage management tools."
                                 tech="VueJS, React Native, Swift, Kotlin, Laravel, GraphQL, AWS"
-                                media="https://tylerco-assets.s3.us-east-2.amazonaws.com/color-lines.mp4"
+                                media="https://tylerco-assets.s3.us-east-2.amazonaws.com/remax-vid.mp4"
+                            />
+                        </Reveal>
+                        <Reveal delayInView="2">
+                            <WorkBlock 
+                                title="booj - TEN" 
+                                description=" booj's TEN is a customized Real Estate platform specifically tailored to the needs of independent real estate brokers under the booj brand. Our mission is to empower brokers and agents with the technology needed to stay competitive in their local markets. Therefore, we offer a complete end-to-end solution that has been developed in-house which included customizable brokerage and agent websites, a suite of mobile apps, lead management software, a custom CRM, dynamic reporting, agent productivity tools, and much more."
+                                tech="VueJS, Laravel, PHP, Python, Swift, Kotlin, AWS"
+                                media="https://tylerco-assets.s3.us-east-2.amazonaws.com/booj.mp4"
                             />
                         </Reveal>
                         <Reveal delayInView="1.25">
                             <WorkBlock 
-                                title="MyOpenDoor" 
-                                description="Open House contact management app for iOS"
+                                title="MyEventManager" 
+                                description="A white-labeled open house contact management app for iOS, tailored specifically for real estate agents to streamline visitor tracking and follow-ups at open houses. This bespoke solution simplifies the capture and organization of potential buyer data, enables immediate communication, and facilitates efficient lead management directly from their mobile devices. By automating these processes, our app helps agents enhance engagement, improve follow-up accuracy, and ultimately, increase the likelihood of closing sales swiftly."
                                 tech="Swift, PHP, AWS"
-                                media="https://tylerco-assets.s3.us-east-2.amazonaws.com/stars.mp4"
+                                media="https://tylerco-assets.s3.us-east-2.amazonaws.com/MyEventManager.mp4"
                             />
                         </Reveal>
                         <Reveal delayInView="1.5">
                             <WorkBlock 
                                 title="ENCON" 
-                                description="Conference and event management platform for iOS"
+                                description="ENCON is a white-labeled conference and event management platform for iOS, designed to enhance attendee engagement and streamline event logistics. This comprehensive application allows attendees to follow along with presentation slides in real-time, view the event schedule, and communicate directly with the event team. Tailored to meet the needs of both organizers and participants, our platform facilitates a seamless interaction flow, ensuring that attendees can maximize their event experience through timely updates, interactive features, and essential organizational tools. "
                                 tech="Swift, PHP, AWS"
-                                media="https://tylerco-assets.s3.us-east-2.amazonaws.com/coding.mp4"
+                                media="https://tylerco-assets.s3.us-east-2.amazonaws.com/encon.mp4"
                             />
                         </Reveal>
                         <Reveal delayInView="1.75">
                             <WorkBlock 
                                 title="MyRealTour" 
-                                description="Open house property tour app utilizing AR and bluetooth beacons to guide users through properties"
+                                description="We engineered an innovative platform for The Enterprise Network, specifically tailored to the distinctive needs of independent real estate brokers associated with the booj brand. This white-labeled solution revolutionizes open house experiences by integrating Bluetooth beacons to create interactive augmented reality (AR) tours. These tours guide potential buyers through properties with real-time informational overlays and immersive walkthroughs, enhancing client engagement and understanding. Alongside AR capabilities."
                                 tech="Swift, PHP, AWS"
+                                media="https://tylerco-assets.s3.us-east-2.amazonaws.com/coding.mp4"
                             />
                         </Reveal>  
-                        <Reveal delayInView="2">
-                            <WorkBlock 
-                                title="Enterprise Network" 
-                                description="The booj independent Real Estate broker platform"
-                                tech="VueJS, Laravel, PHP, Python, Swift, Kotlin, AWS"
-                            />
-                        </Reveal>
                     </div>
                 </div>
             </div>

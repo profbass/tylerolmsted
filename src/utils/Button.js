@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// TODO: make this cool af
+
 Button.propTypes = {
     size: PropTypes.string,
     color: PropTypes.string,
@@ -23,44 +23,40 @@ Button.defaultProps = {
     buttonClass: "",
 };
 
-function Button({ size, color, text, link, type, isNewTab, buttonClass , iconClass}) {
+function Button({ size, text, link, type, isNewTab, buttonClass , iconClass}) {
 
     let buttonProps;
 
     switch (size) {
-        case "xs":
-            buttonProps = `rounded bg-${color} px-2 py-1 font-body text-xs font-bold text-white`;
-            break;
         case "sm":
-            buttonProps = `rounded bg-${color} px-4 py-2 font-body text-sm font-bold text-white`;
+            buttonProps = "rounded bg-yellow px-4 py-2 font-body text-sm font-bold text-primary hover:bg-grey-40 hover: transform hover:scale-105 transition-all";
             break;
         case "md":
-            buttonProps = `bg-${color} px-4 py-2 font-body text-md font-bold text-white`;
+            buttonProps = "g-yellow px-4 py-2 font-body text-md font-bold text-primary hover:bg-grey-50 hover: transform hover:scale-105 transition-all";
             break;
         case "lg":
-            buttonProps = `mt-6 flex items-center justify-center rounded bg-${color} px-8 py-3 font-header text-lg font-bold text-white hover:bg-grey-20`;
+            buttonProps = "mt-6 flex items-center justify-center rounded bg-primary px-8 py-3 font-header text-lg font-bold text-white hover:bg-grey-20 hover: transform hover:scale-105 transition-all";
             break;
         default:
             buttonProps = "";
     }
 
     if (buttonClass) {
-        buttonProps = buttonClass + " cursor-pointer " + buttonProps;
+        buttonProps = buttonClass;
     }
 
     return (
-        <a 
-            href={link} 
-            target={isNewTab ? "_blank" : "_self"} 
-            rel="noreferrer"
-            className={buttonProps}
-            alt={text}
-            type={type}
-        >
-            {text}
-            {iconClass && (
-                <i className={`bx ${iconClass} relative -right-2 text-3xl`}></i>
-            )}
+        <a href={link} target={isNewTab ? "_blank" : "_self"} rel="noreferrer">
+            <button
+                className={buttonProps}
+                alt={text}
+                type={type}
+            >
+                {text}
+                {iconClass && (
+                    <i className={`bx ${iconClass} relative -right-2 text-3xl`}></i>
+                )}
+            </button>
         </a>
     );
 }

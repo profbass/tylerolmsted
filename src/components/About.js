@@ -49,7 +49,7 @@ const About = () => {
             </Reveal>
             <Reveal delayInView="0.5">
               <p className="pt-6 text-xl font-body leading-relaxed text-copy">
-                With over eighteen years in the tech sector, I've propelled ✈ teams toward crafting state-of-the-art SaaS and mobile apps 📱 from scratch to stellar launches. My forte lies in fusing agile methodologies, rapid prototyping, and lean startup principles to ignite innovation and deliver robust, scalable solutions in the dynamic world of startups. <br /><span className="text-grey-40 text-sm italic">*buzz words be damned!</span>
+                With over eighteen years in the tech sector, I've propelled ✈ teams toward crafting state-of-the-art SaaS and mobile apps 📱 from scratch to stellar launches. My forte lies in fusing agile methodologies, rapid prototyping, and lean startup principles to ignite innovation and deliver robust, scalable solutions in the dynamic world of technology. <br /><span className="text-grey-40 text-sm italic">*buzz words be damned!</span>
               </p>
             </Reveal>
           </div>

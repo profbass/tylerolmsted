@@ -28,7 +28,7 @@ export default function App() {
 
   return (
     <LoadingContext.Provider value={{ loadingComplete, setLoadingComplete }}> {/* Provide the context */}
-      <div className="bg-paper z-10 overflow-hidden">
+      <div className="bg-paper overflow-hidden z-10">
         <PageLoader />
         <Logo />
         <Navigation />

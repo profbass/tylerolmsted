@@ -20,7 +20,7 @@ const NavLink = ({ name, href }) => {
             to={href} 
             smooth={true}
             duration={500} 
-            className="relative overflow-hidden cursor-pointer block"
+            className="relative overflow-hidden cursor-pointer hidden lg:block"
         >
             <motion.div className="absolute inset-0 bg-yellow"
                 initial={{ width: 0 }}
@@ -79,7 +79,6 @@ function Navigation() {
             y: 0,
             opacity: 1,
             transition: {
-                type: 'spring',
                 stiffness: 100,
             },
         }
@@ -108,6 +107,26 @@ function Navigation() {
                         <NavLink {...link} />
                     </motion.li>
                 ))}
+                {/* Hard link to my resume */}
+                 <motion.li 
+                        variants={itemVariants}
+                        className='block border-t border-yellow'
+                >
+                    <a 
+                        href="https://tylerco-assets.s3.us-east-2.amazonaws.com/Tyler-Olmsted-Resume.pdf" 
+                        className="relative overflow-hidden cursor-pointer block"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        <motion.div className="absolute inset-0 bg-yellow"
+                            initial={{ width: 0 }}
+                            whileHover={{ width: '100%', transition: { duration: 0.2, ease: "easeOut" } }}
+                        />
+                        <span className="relative z-10 px-4 py-1 text-white w-full block">
+                            Resume
+                        </span>
+                    </a>
+                </motion.li>
             </motion.ul>
         </motion.div>
     )

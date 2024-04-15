@@ -4,7 +4,7 @@ import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { Flip } from 'react-toastify'
 import Reveal from '../utils/Reveal'
-import { motion, useViewportScroll, useTransform } from 'framer-motion'
+
 
 
 const Contact = () => {
@@ -15,6 +15,8 @@ const Contact = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
+
+    console.log(name, email, message)
     
     const notify = (e) => toast(e, {
       position: "bottom-center",
@@ -58,46 +60,36 @@ const Contact = () => {
     
   }
 
-  const { scrollYProgress } = useViewportScroll() 
-  const yRange = useTransform(scrollYProgress, [0, 1], ['-100px', '100px'])
-
   return (
-    <section id="contact" className="mt-60">
-      <Reveal yValue={20}>
-          <div className="text-base">
-              <span className="text-primary pr-8 mr-2 inline-block border-b-4 border-b-secondary"></span>
-              <span className="text-off-black inline-block font-semibold">DROP ME A LINE</span>
-          </div>
-      </Reveal>
+    <section id="contact" className="lg:mt-80 xs:mt-20">
+      <div className="container mx-auto lg:my-10">
+        <div className="flex flex-wrap lg:px-20 xs:px-0 mb-10">
+            <div>  
+              <Reveal yValue={20}>
+                  <div className="text-base">
+                      <span className="text-primary pr-8 mr-2 inline-block border-b-4 border-b-secondary"></span>
+                      <span className="text-off-black inline-block font-semibold">DROP A LINE</span>
+                  </div>
+              </Reveal>
+              <Reveal delayInView="0.5">
+                  <h1 className="lg:text-vw-xl xs:text-8xl font-semibold leading-tight xs:mb-10 text-off-black">Contact <span className="text-yellow">Me</span></h1>
+              </Reveal>
+            </div>
+            <div className="lg:w-2/5 xs:w-full lg:ml-20">
+              <Reveal delayInView="0.25">
+                  <p className="text-xl leading-relaxed text-off-black">
+                  The power of connection is everything, I would <span className="text-secondary font-bold underline">love</span> to hear from you. Let's chat about your next project, your favorite book, or your favorite place to grab a cup of coffee ☕️. I'm all ears.
+                  </p>
+              </Reveal>
+            </div>
+          </div> 
+      </div>
       <div 
           className="flex flex-wrap w-full h-screen overflow-hidden"
       >
         <div
           className="relative lg:w-1/2 xs:w-full"
         >
-          <div className="relative container py-16 md:py-20 z-20">
-            {/* <div className="flex mb-10">
-                <div className="w-full">
-                    <Reveal yValue={20}>
-                        <div className="text-base text-center">
-                            <span className="pr-8 mr-2 inline-block border-b-4 border-b-yellow"></span>
-                            <span className="text-paper inline-block font-semibold">CONTACT ME</span>
-                        </div>
-                    </Reveal>
-                    <Reveal delayInView="0.25">
-                        <h1 className="lg:text-vw-lg xs:text-8xl text-center text-paper font-semibold leading-extra-tight">
-                          Let's Stay<br />in Touch
-                        </h1>
-                    </Reveal>
-                    <Reveal delayInView="0.5">
-                        <p className="text-2xl text-center text-paper leading-relaxed lg:pt-10 lg:pl-15">
-                          Drop me a line! The power of connection is <br/>
-                          <span className="text-secondary font-bold underline">everything</span>, I would love to hear from you! 🙉
-                        </p>
-                    </Reveal>
-                </div>
-            </div> */}
-          </div>
           <video
               className="absolute inset-0 z-10"
               style={{
@@ -119,16 +111,10 @@ const Contact = () => {
             <div
               className="w-full z-20"
             >
-              <h2 className="text-vw-base xs:text-6xl text-white mb-20 inline-block leading-extra-tight font-bold bg-primary">
-                <motion.span 
+              <h2 className="text-vw-base xs:text-6xl text-white mb-20 inline-block leading-extra-tight font-bold bg-primary p-5">
+                <span 
                   className="inline-block text-yellow"
-                  animate={{ rotate: [0, 360, 0] }}
-                  transition={{
-                    ease: "linear",
-                    loop: Infinity,
-                    duration: 2
-                }}
-                >*</motion.span> Tell me<br />about yourself
+                >*</span> Tell me<br />about yourself
               </h2> 
              
               <form className="mx-auto bg-primary w-full p-10 block" onSubmit={handleSubmit}>
@@ -154,18 +140,19 @@ const Contact = () => {
                   className="w-full px-4 py-3 font-body text-white placeholder-white bg-transparent border-b-2 border-white"
                   placeholder="Message"
                   id="Message"
-                  rows="10"
+                  rows="8"
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                 ></textarea>
                 <Button
                   size="lg"
-                  text="Send"
+                  text="Submit"
                   type="submit"
-                  iconClass="bx-chevron-right"
+                  iconClass="bx-right-arrow-alt"
                 />
+                <ToastContainer />
               </form>
-              <ToastContainer />
+              
             </div>
         </div>
       </div>
