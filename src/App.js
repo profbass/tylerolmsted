@@ -1,38 +1,48 @@
+import React, { useState } from 'react';
 import './App.css';
-import Logo from './components/Logo';
-import Navigation from './components/Navigation';
+import { LoadingContext } from './utils/LoadingContext'; // Import the context
+import Logo from './utils/Logo';
+import Navigation from './utils/Navigation';
 import PageLoader from './utils/PageLoader';
 import Hero from './components/Hero';
 import About from './components/About';
-import Expertise from './components/Expertise';
-import Experience from './components/Experience';
-import Statistics from './components/Statistics';
+import TextScrolling from './components/TextScrolling';
+import MyMission from './components/MyMission';
 import Contact from './components/Contact';
-import Subscribe from './components/Subscribe';
-import Footer from './components/Footer';
+// import Subscribe from './components/Subscribe';
+import Footer from './utils/Footer';
+import Work from './components/Work';
+// import Experience from './components/Experience';
+import ScrollingTagline from './components/ScrollingTagline';
 
+// TODO:Contact page scroll effect cleanup
+// TODO: Work page videos
+// TODO: add a new text loading animation component
+// TODO: Mobile view audit
+// TODO: Figout out what to do with the spoace the work and contact section
+// TODO: Link Resume
+// TODO: Logo anitmation cleanup
+// TODO: Text scroll cleanup
 export default function App() {
+  const [loadingComplete, setLoadingComplete] = useState(false); // Manage the state here
+
   return (
-    <>
-      <PageLoader />
-      <div id="main" data-testid="main">
-        <div className="w-full z-50 top-0 py-3 sm:py-5  absolute">
-          <div className="container flex items-center justify-between">
-            <Logo />
-            <Navigation /> 
-          </div>
-        </div>
-        <div className="bg-grey-50">
-          <Hero />
-          <About />
-          <Expertise />
-          <Experience />
-          <Statistics />
-          <Contact />
-          <Subscribe />
-          <Footer />
-        </div>
+    <LoadingContext.Provider value={{ loadingComplete, setLoadingComplete }}> {/* Provide the context */}
+      <div className="bg-paper overflow-hidden z-10">
+        <PageLoader />
+        <Logo />
+        <Navigation />
+        <Hero />
+        <TextScrolling />
+        <About />
+        <MyMission />
+        <Work />
+        {/* <Experience /> */}
+        <ScrollingTagline />
+        <Contact />
+        {/* <Subscribe /> */}
       </div>
-    </>
+      <Footer />
+    </LoadingContext.Provider>
   );
 }

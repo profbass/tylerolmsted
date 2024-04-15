@@ -28,13 +28,13 @@ export default function Avatar() {
     return (
         // The mask element that will animate from hidden to visible
         <motion.div 
-            className="overflow-hidden rounded-full border-8 border-yellow shadow-xl hover:transform hover:scale-105 transition-all"
+            className="overflow-hidden inline-block rounded-full border-8 border-yellow shadow-xl hover:transform hover:scale-105 transition-all"
             initial="hidden"
             animate="visible"
             variants={maskVariants}
         >
             <img
-                src={process.env.PUBLIC_URL + "/img/blog-author.jpg"} // Fixed the src path
+                src={process.env.PUBLIC_URL + `${process.env.PUBLIC_URL}/img/avatar.jpg`} // Fixed the src path
                 className="h-48 w-48 sm:h-56 sm:w-56 object-cover rounded-full" // Ensure the image covers the masked area and is rounded
                 alt="author"
             />
