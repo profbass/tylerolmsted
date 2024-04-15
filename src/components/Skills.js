@@ -1,36 +1,35 @@
-import React, { useMemo } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import CountUp from 'react-countup';
+import { LoadingContext } from '../utils/LoadingContext';
 
-const Skills = () => {
-    const data = useMemo(() => [
-        { label: 'JS / React / Next.JS', percentage: 90 },
-        { label: 'Native Mobile', percentage: 75 },
-        { label: 'Python', percentage: 70 },
-        { label: 'PHP / Laravel', percentage: 80 },
-        { label: 'AWS', percentage: 95 },
-    ], []);
-
-    return (
-        <div className="w-full pl-0 pt-10">
-            {data.map((item, index) => (
-                <SkillBarItem key={index} item={item} />
-            ))}
-        </div>
-    );
-};
+const data = [
+    { label: 'Product Vision', percentage: 100, key: 1 },
+    { label: 'Iterative Development', percentage: 100, key: 2 },
+    { label: 'Startup Agility', percentage: 100, key: 3 },
+    { label: 'Continuous Innovation', percentage: 100, key: 4 },
+    { label: 'Rapid Release Cycles', percentage: 100, key: 5 },
+]
 
 const SkillBarItem = ({ item }) => {
     const { ref, inView } = useInView({
         triggerOnce: true,
         threshold: 0.5,
-    });
+    })
+
+    const { loadingComplete } = useContext(LoadingContext)
+
+    useEffect(() => {
+        if (inView && loadingComplete) {
+            // mainControls.start("visible")
+        }
+    }, [inView, loadingComplete])
 
     return (
         <div className="pt-6" ref={ref}>
             <div className="flex items-end justify-between">
-                <h4 className="font-header3 font-semibold uppercase text-black">{item.label}</h4>
+                <h4 className="font-2 font-semibold text-off-black uppercase font-bold">{item.label}</h4>
                 <h3 className="font-body text-3xl font-bold text-primary">
                     <CountUp end={inView ? item.percentage : 0} duration={2} />
                     %
@@ -41,11 +40,22 @@ const SkillBarItem = ({ item }) => {
                     className="h-3 rounded-full bg-coral"
                     initial={{ width: 0 }}
                     animate={{ width: inView ? `${item.percentage}%` : 0 }}
-                    transition={{ duration: 2, ease: "easeOut" }} // Added a 2-second delay here
+                    transition={{ duration: 2, ease: "easeOut" }}
                 ></motion.div>
             </div>
         </div>
-    );
-};
+    )
+}
+
+const Skills = () => {
+
+    return (
+        <div className="w-full pl-0 pt-10">
+            {data.map((item, index) => (
+                <SkillBarItem key={index} item={item} />
+            ))}
+        </div>
+    )
+}
 
 export default Skills;

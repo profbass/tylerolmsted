@@ -1,4 +1,6 @@
 import Reveal from "../utils/Reveal";
+import { motion } from "framer-motion";
+
 const Experience = () => {
 
   const workExperience = [
@@ -26,59 +28,108 @@ const Experience = () => {
       delay: '1.1',
       description: `Joining Backflip in early 2022, i established the engineering teams and led the launch of the flagship iOS and Android apps. Throughout my tenure, I guided the team through a successful Series A funding round. I played a pivotal role in architecting and building the company's engineering and IT infrastructure, ensuring scalability and resilience to support rapid expansion and innovation.`
     }
-  ];
+  ] 
+
+
+const workBlockVariants = {
+  hidden: {
+    opacity: 0,
+    y: 50
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut"
+    }
+  },
+  hover: {
+    backgroundColor: "#ff00ff",
+    color: "#ff00ff",
+    transition: {
+      duration: 0.5,
+      ease: "easeOut"
+    }
+  }
+}
+ const imageVariants = {
+    hidden: {
+      opacity: 0,
+      scale: 0.5
+    },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      },
+      hover: {
+        opacity: 1,
+        scale: 1,
+        transition: {
+          duration: 0.5,
+          ease: "easeOut"
+        }
+      }
+    }
+  }
+
+  
+
+  const ExperienceBlock = ({ item }) => {
+   return (
+    <motion.div 
+      className="p-8 border-b-2 border-r-2 border-l-2 border-copy cursor-pointer"
+      variants={workBlockVariants}
+      inital="hidden"
+      animate="visible"
+      whileHover="hover"
+    >
+      <div className="flex items-center justify-center">
+          <motion.div  
+            alt={item.company} 
+            className="item-center fill-yellow min-w-100 min-h-40"
+            variants={imageVariants}
+            inital="hidden"
+            style={{
+              backgroundImage: `url(${item.logo})`,
+              filter: "invert(48%) sepia(44%) saturate(2778%) hue-rotate(346deg) brightness(100%) contrast(97%);"
+            }}
+          ></motion.div>
+        <div className="hidden flex flex-col items-center ml-4">
+          <img src={item.logo} alt={item.company} className="w-12 h-12 mr-4" />
+          <p className="text-sm text-gray-500">{item.years}</p>
+          <p className="text-sm text-gray-500">{item.position}</p>
+          <p className="text-sm text-gray-600 mt-4">{item.description}</p>
+        </div>
+      </div>
+    </motion.div>
+   )
+  }
+
 
   return (
-    <div className="container py-16 md:py-20" id="work">
-      <Reveal>
-        <h2 className="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
-          My work experience
-        </h2>
-      </Reveal>
-      <Reveal delayInView="0.5">
-        <h3 className="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
-          Here's where I've been
-        </h3>
-      </Reveal>
-      <div className="relative mx-auto mt-12 flex w-full flex-col lg:w-2/3">
-        <span className="left-2/5 absolute inset-y-0 ml-10 hidden w-0.5 bg-grey-40 md:block"></span>
-
-        {workExperience.map((experience, index) => (
-          <Reveal delayInView={experience.delay}>
-          <div key={index} className="mt-8 flex flex-col text-center md:flex-row md:text-left transition-all will-change-transform">
-            <div className="md:w-2/5">
-              <div className="flex justify-center md:justify-start">
-                <span className="shrink-0 hover: transform hover:scale-125 transition-all">
-                  <img src={experience.logo} className="h-auto w-32" alt="company logo" />
-                </span>
-                <div className="relative ml-3 hidden w-full md:block">
-                  <span className="absolute inset-x-0 top-1/2 h-0.5 -translate-y-1/2 transform bg-grey-70"></span>
-                </div>
-              </div>
-            </div>
-            <div className="md:w-3/5">
-              <div className="relative flex md:pl-18">
-                <span className="absolute left-8 top-1 hidden h-4 w-4 rounded-full border-2 border-grey-40 bg-white md:block"></span>
-
-                <div className="mt-1 flex">
-                  <i className="bx bxs-right-arrow hidden text-primary md:block"></i>
-                  <div className="md:-mt-1 md:pl-8">
-                    <span className="block pt-2 font-header text-xl font-bold uppercase text-primary">{experience.company}</span>
-                    <span className="block font-body font-bold text-grey-40">{experience.years}</span>
-                    <span className="block pt-2 font-header text-l font-bold uppercase text-yellow">{experience.position}</span>
-                    <div className="pt-2">
-                      <span className="block font-body text-black">{experience.description}</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> 
-          </Reveal>
-        ))}
+    <section id="experience" className="mb-100 mt-60">
+      <div className="container">
+        <Reveal yValue={20}>
+          <div className="text-base">
+            <span className="text-primary pr-8 mr-2 inline-block border-b-4 border-b-secondary"></span>
+            <span className="text-off-black inline-block font-semibold">Here' what I've been up to</span>
+          </div>
+          <h1 className="lg:text-vw-xl xs:text-8xl font-semibold leading-extra-tight">Experience</h1>
+        </Reveal>
+        <div className="flex flex-wrap w-full border-t-2 border-copy px-5 mt-20">
+          {workExperience.map((item, index) => (
+            <Reveal key={index} delayInView={item.delay}>
+                <ExperienceBlock item={item} />
+            </Reveal>
+          ))}
+        </div>
       </div>
-    </div>
-  );
-};
+    </section>
+  )
+}
 
 export default Experience;

@@ -1,44 +1,70 @@
 import Skills from "./Skills";
 import Reveal from "../utils/Reveal";
+import Avatar from "../utils/Avatar";
+import SocialLinks from "../utils/SocialLinks";
+import Button from "../utils/Button";
 import { motion } from "framer-motion";
 
 const About = () => {
 
   return (
-    <div id="about" className="container">
-      <div className="flex flex-wrap w-full pace-x-0.5 pt-20">
-        <div className="md:w-2/3">
-        <Reveal>
-          <h2 className="text-left font-header text-4xl font-semibold uppercase text-primary sm:text-5xl xs:text-6xl lg:text-6xl">
-          Who am I?
-          </h2>
-        </Reveal>
-          <Reveal delayInView="0.25">
-            <h4 className="pt-6 font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
-              I'm Tyler Olmsted, and I love building great products!
-            </h4>
-          </Reveal>
-          <Reveal delayInView="0.5">
-            <p className="pt-6 font-body leading-relaxed text-grey-20">
-              With over fifteen years in the tech industry, I have spearheaded software teams in <b>crafting cutting-edge SaaS and mobile applications</b>, steering them from conceptualization to successful launch. I thrive on igniting an organization's maximum potential, <b>cultivating a culture rooted in user-centric innovation</b>, and continually pushing the boundaries of what is attainable. My passion lies in leveraging <b>agile methodologies, rapid prototyping, and lean startup principles</b> to drive product development and deliver scalable solutions in fast-paced startup environments.
-            </p>
-          </Reveal>
-          <Reveal delayInView="1">
-            <p className="pt-6 font-body leading-relaxed text-grey-20">
-              Most recently, as <b>VP of Engineering at Backflip</b>, I established the engineering teams and led the <b>launch of their flagship iOS and Android apps</b>. Throughout my tenure there, I guided the team through a <b>successful Series A funding round</b> and played a pivotal role in <b>architecting and building Backflip's engineering and IT infrastructure</b>, ensuring scalability and resilience to support rapid expansion and innovation.
-            </p>
-          </Reveal>
+    <section id="about">
+      <div className="container mx-auto">
+        <div className="flex flex-wrap w-full pace-x-0.5 pt-20 xs:pt-0">
+          <div className="md:w-2/3 lg:pr-36 md:pr-10">
+            <div className="flex">
+              <div className="pr-5"><Avatar /></div>
+              <div>
+                <Reveal>
+                  <div className="text-base mb-3">
+                    <span className="text-primary pr-8 mr-2 inline-block border-b-4 border-b-secondary"></span>
+                    <span className="text-grey-10 inline-block font-semibold">THE MAN OF ACTION</span>
+                  </div>
+                  <h2 className="text-left font-header2 leading-tight font-semibold text-primary md:text-6xl sm:text-7xl xs:text-6xl lg:text-8xl">
+                  Who<br />am I?
+                  </h2>
+                </Reveal>
+              </div>
+            </div>
+            <Reveal delayInView="0.25">
+              <h4 className="pt-6 font-header text-xl text-copy font-medium sm:text-2xl lg:text-3xl">
+                I'm <span className="font-bold text-primary underline">Tyler</span>, and I <span className="text-secondary font-semibold">love</span> building inspired products!
+              </h4>
+            </Reveal>
+            <Reveal delayInView="0.5">
+              {/* <p className="pt-6 text-xl font-body leading-relaxed text-copy uppercase font-semibold">
+                Let's Connect<i className="bx bx-chevron-right text-3xl"></i>
+                <SocialLinks
+                  className="ml-2"
+                /> 
+                <Button 
+                  text="My Resume" 
+                  link="https://tylerco-assets.s3.us-east-2.amazonaws.com/Tyler-Olmsted-Resume.pdf"
+                  isNewTab={true}
+                  size="xs"
+                  color="secondary"
+                  buttonClass="ml-5"
+                />
+              </p> */}
+            </Reveal>
+            <Reveal delayInView="0.5">
+              <p className="pt-6 text-xl font-body leading-relaxed text-copy">
+                With over eighteen years in the tech sector, I've propelled ✈ teams toward crafting state-of-the-art SaaS and mobile apps 📱 from scratch to stellar launches. My forte lies in fusing agile methodologies, rapid prototyping, and lean startup principles to ignite innovation and deliver robust, scalable solutions in the dynamic world of technology. <br /><span className="text-grey-40 text-sm italic">*buzz words be damned!</span>
+              </p>
+            </Reveal>
+          </div>
+          <motion.div 
+            className="md:w-1/3 xs:w-full"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 2.5 }}
+          >
+            <Skills />
+          </motion.div>
         </div>
-        <motion.div 
-          className="md:w-1/3 xs:w-full"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 2.5 }}
-        >
-          <Skills />
-        </motion.div>
       </div>
-    </div>
+    </section>
+    
   );
 };
 
