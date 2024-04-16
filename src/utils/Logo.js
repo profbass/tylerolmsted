@@ -32,7 +32,7 @@ function Logo() {
                     <a href="/">
                         <img 
                             src={process.env.PUBLIC_URL + '/img/logo-tyler-olmsted-yellow.svg'} 
-                            className="w-20 lg:w-24" 
+                            className="w-20 lg:w-24 blur-0 hover:blur-sm transition-all duration-300 ease-in-out" 
                             alt="Tyler Olmsted Logo" />
                     </a>
                 </motion.div>
