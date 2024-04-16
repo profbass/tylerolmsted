@@ -8,6 +8,8 @@ import Reveal from '../utils/Reveal'
 
 
 const Contact = () => {
+  const isMobile = window.innerWidth <= 500
+
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
@@ -90,19 +92,23 @@ const Contact = () => {
         <div
           className="relative lg:w-1/2 xs:w-full"
         >
-          <video
-              className="absolute inset-0 z-10"
-              style={{
-                  objectPosition: "bottom",
-                  objectFit: "cover",
-                  width: "100%",
-                  height: "100%"
-              }}
-              autoPlay
-              muted
-              loop
-              src={"https://tylerco-assets.s3.us-east-2.amazonaws.com/clouds.mp4"}
-          />
+          {/* TODO: I should get a fall back image for this */}
+          {!isMobile && (  
+            
+            <video
+                className="absolute inset-0 z-10"
+                style={{
+                    objectPosition: "bottom",
+                    objectFit: "cover",
+                    width: "100%",
+                    height: "100%"
+                }}
+                autoPlay
+                muted
+                loop
+                src={"https://tylerco-assets.s3.us-east-2.amazonaws.com/clouds.mp4"}
+            />
+          )}
         </div>
         <div
           className="lg:w-1/2 xs:w-full bg-primary"

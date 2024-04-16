@@ -1,18 +1,10 @@
-import { motion, useScroll, useTransform } from "framer-motion"
-import React, { useRef } from "react"
 import Reveal from "../utils/Reveal"
 import SocialLinks from "../utils/SocialLinks"
 import { Parallax, ParallaxProvider } from 'react-scroll-parallax'
 
 
 const Hero = () => {
-    const ref = useRef(null);
-    const { scrollYProgress } = useScroll({
-        target: ref,
-        offset: ["start start", "end start"],
-    });
-    const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
-    const textY = useTransform(scrollYProgress, [0, 1], ["20%", "40%"]);
+    const isMobile = window.innerWidth <= 500;
 
     return (
         <section id="home">
@@ -23,7 +15,7 @@ const Hero = () => {
                 
                 <div className="relative z-20">
                     <Parallax speed={-25}>
-                    <div className="container mx-auto h-full lg:mt-60 xs:mt-20">
+                    <div className="container mx-auto h-full lg:mt-60 xs:mt-32">
                         
                         <div className="flex flex-wrap lg:pl-20">
                             
@@ -84,19 +76,34 @@ const Hero = () => {
 
                 </Parallax>
                 </div>
-                <video
-                    className="absolute inset-0 z-10"
-                    style={{
-                        objectPosition: "bottom",
-                        objectFit: "cover",
-                        width: "100%",
-                        height: "100%"
-                    }}
-                    autoPlay
-                    muted
-                    loop
-                    src={"https://tylerco-assets.s3.us-east-2.amazonaws.com/waves.mp4"}
-                />
+                {isMobile ? (
+                    <img
+                        className="absolute inset-0 z-10 "
+                        alt="waves"
+                        style={{
+                            objectPosition: "bottom",
+                            objectFit: "cover",
+                            width: "100%",
+                            height: "100%"
+                        }}
+                        src={"https://tylerco-assets.s3.us-east-2.amazonaws.com/waves-img.jpg"}
+                    />
+                
+                ) : (
+                    <video
+                        className="absolute inset-0 z-10"
+                        style={{
+                            objectPosition: "bottom",
+                            objectFit: "cover",
+                            width: "100%",
+                            height: "100%"
+                        }}
+                        autoPlay
+                        muted
+                        loop
+                        src={"https://tylerco-assets.s3.us-east-2.amazonaws.com/waves.mp4"}
+                    />
+                )}
             </div>
             
             </ParallaxProvider>
