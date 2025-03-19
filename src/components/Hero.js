@@ -1,10 +1,27 @@
 import Reveal from "../utils/Reveal"
 import SocialLinks from "../utils/SocialLinks"
 import { Parallax, ParallaxProvider } from 'react-scroll-parallax'
-
+import { useState, useEffect } from 'react'
+import { assets } from '../config/assets'
 
 const Hero = () => {
     const isMobile = window.innerWidth <= 500;
+    const [videoUrl, setVideoUrl] = useState('');
+
+    useEffect(() => {
+        // Fetch the video URL from your Vercel Blob storage
+        const fetchVideoUrl = async () => {
+            try {
+                const response = await fetch('/api/upload?filename=waves.mp4');
+                const data = await response.json();
+                setVideoUrl(data.url);
+            } catch (error) {
+                console.error('Error fetching video URL:', error);
+            }
+        };
+
+        fetchVideoUrl();
+    }, []);
 
     return (
         <section id="home">
@@ -86,7 +103,7 @@ const Hero = () => {
                             width: "100%",
                             height: "100%"
                         }}
-                        src={"https://tylerco-assets.s3.us-east-2.amazonaws.com/waves-img.jpg"}
+                        src={assets.images.hero.waves}
                     />
                 
                 ) : (
@@ -101,7 +118,7 @@ const Hero = () => {
                         autoPlay
                         muted
                         loop
-                        src={"https://tylerco-assets.s3.us-east-2.amazonaws.com/waves.mp4"}
+                        src={assets.videos.hero.waves}
                     />
                 )}
             </div>
