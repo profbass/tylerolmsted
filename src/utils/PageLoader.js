@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { motion } from "framer-motion"
 import { LoadingContext } from './LoadingContext'
 
+// TODO: Add in an animation where the logo looks like it filling up as it's loading
 const imageRevealVariants = {
     hidden: { 
         opacity: 0,

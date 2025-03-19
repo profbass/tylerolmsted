@@ -1,6 +1,6 @@
 import { motion, useAnimation } from 'framer-motion';
 import Reveal from '../utils/Reveal';
-
+import { assets } from '../config/assets';
 const WorkBlock = ({ title, description, tech, video, image }) => {
     const controls = useAnimation();
     const isMobile = window.innerWidth <= 500;
@@ -209,7 +209,7 @@ export default function Work() {
                                 title="Backflip Mobile" 
                                 description="The Backflip mobile application revolutionizes real estate investing on iOS and Android by leveraging native mobile code for optimal performance and integrating machine learning to automate the identification and evaluation of potential deals. Backflip helps investors efficiently source potential home deals with tailored financial options, making complex investment decisions accessible and actionable at the touch of a button."
                                 tech="React, SwiftUI, Kotlin, Django, GraphQL, AWS"
-                                video="https://tylerco-assets.s3.us-east-2.amazonaws.com/backflip.mp4"
+                                video={assets.videos.portfolio.backflip}
                                 image="https://tylerco-assets.s3.us-east-2.amazonaws.com/backflip-logo.jpg"
                             />
                         </Reveal>
@@ -248,7 +248,7 @@ export default function Work() {
                                 title="ENCON" 
                                 description="ENCON is a white-labeled conference and event management platform for iOS, designed to enhance attendee engagement and streamline event logistics. This comprehensive application allows attendees to follow along with presentation slides in real-time, view the event schedule, and communicate directly with the event team. Tailored to meet the needs of both organizers and participants, our platform facilitates a seamless interaction flow, ensuring that attendees can maximize their event experience through timely updates, interactive features, and essential organizational tools. "
                                 tech="Swift, PHP, AWS"
-                                video="https://tylerco-assets.s3.us-east-2.amazonaws.com/encon.mp4"
+                                video={assets.videos.portfolio.encon}
                                 image="https://tylerco-assets.s3.us-east-2.amazonaws.com/encon.jpg"
                             />
                         </Reveal>
